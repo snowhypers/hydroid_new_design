@@ -78,8 +78,8 @@
 
     <div class="w-full max-w-[400px] h-full sm:h-[850px] sm:rounded-[40px] flex flex-col relative bg-brand-bg shadow-2xl overflow-hidden font-sans border-4 border-slate-400/20">
         
-        <!-- Premium Header Section -->
-        <header class="bg-gradient-to-b from-brand-navy to-[#26314f] header-curve px-6 pt-12 pb-8 flex flex-col z-20 relative shadow-lg">
+        <!-- Premium Header Section (Only visible on Home Tab) -->
+        <header id="app-header" class="bg-gradient-to-b from-brand-navy to-[#26314f] header-curve px-6 pt-12 pb-8 flex flex-col z-20 relative shadow-lg">
             <!-- Top row: Date & Notification -->
             <div class="flex justify-between items-center mb-6">
                 <div class="flex items-center gap-2 text-white/80 text-[13px] font-medium tracking-wide">
@@ -138,7 +138,7 @@
                     <span class="w-3.5 h-3.5 flex items-center justify-center shrink-0">
                         <i class="fa-solid fa-certificate text-green-400 animate-spin" style="animation-duration: 4s;"></i> 
                     </span>
-                    UV Scan Active
+                    UV-C
                 </div>
             </div>
 
@@ -149,233 +149,736 @@
             </div>
         </header>
 
-        <main class="flex-1 overflow-y-auto no-scrollbar px-5 pt-6 pb-32 -mt-4 relative z-10 space-y-7">
+        <main class="flex-1 overflow-y-auto no-scrollbar px-5 pt-6 pb-32 -mt-4 relative z-10">
 
-            <!-- Contextual Smart Alerts -->
-            <section class="space-y-3 animate-fade-in-up">
-                <!-- Goal Achievement Card -->
-                <div class="bg-[#fdf9f1] rounded-[24px] p-4 flex items-center gap-4 shadow-soft border border-amber-100/50 hover:scale-[1.02] transition-transform cursor-pointer">
-                    <div class="w-12 h-12 rounded-[18px] bg-white flex items-center justify-center shadow-sm flex-shrink-0 text-amber-500">
-                        <i class="fa-solid fa-trophy text-xl"></i>
+            <!-- HOME TAB VIEW -->
+            <div id="view-home" class="tab-view space-y-7 animate-fade-in-up">
+                <!-- Contextual Smart Alerts -->
+                <section class="space-y-3">
+                    <!-- Goal Achievement Card -->
+                    <div class="bg-[#fdf9f1] rounded-[24px] p-4 flex items-center gap-4 shadow-soft border border-amber-100/50 hover:scale-[1.02] transition-transform cursor-pointer">
+                        <div class="w-12 h-12 rounded-[18px] bg-white flex items-center justify-center shadow-sm flex-shrink-0 text-amber-500">
+                            <i class="fa-solid fa-trophy text-xl"></i>
+                        </div>
+                        <p class="text-[14px] font-bold text-brand-textMain leading-snug pr-2">
+                            You've hit today's hydration goal. Amazing consistency!
+                        </p>
                     </div>
-                    <p class="text-[14px] font-bold text-brand-textMain leading-snug pr-2">
-                        You've hit today's hydration goal. Amazing consistency!
-                    </p>
-                </div>
-            </section>
+                </section>
 
-            <section class="animate-fade-in-up delay-100">
-                <div class="flex justify-between items-center mb-4 px-1">
-                    <h2 class="text-[16px] font-bold text-brand-textMain tracking-tight">Smart Water Metrics</h2>
-                    <a href="#" class="text-[13px] font-bold text-blue-600 hover:text-blue-700">See All</a>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <!-- TDS Card -->
-                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-[28px] p-5 text-white shadow-[0_12px_24px_-8px_rgba(37,99,235,0.4)] relative overflow-hidden flex flex-col h-44 hover:-translate-y-1 transition-transform">
-                        <div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
-                        <div class="flex justify-between items-start mb-auto relative z-10">
-                            <span class="text-[13px] font-bold tracking-wide">TDS Level</span>
-                            <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                                <i class="fa-solid fa-droplet text-white text-[10px]"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Visual Chart Mockup -->
-                        <div class="h-10 w-full flex items-end gap-1.5 mb-3 opacity-90 relative z-10">
-                            <div class="w-1/5 bg-white/30 h-1/3 rounded-sm"></div>
-                            <div class="w-1/5 bg-white/50 h-2/3 rounded-sm"></div>
-                            <div class="w-1/5 bg-white/40 h-1/2 rounded-sm"></div>
-                            <div class="w-1/5 bg-white h-full rounded-sm shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
-                            <div class="w-1/5 bg-white/60 h-3/4 rounded-sm"></div>
-                        </div>
-
-                        <div class="flex items-baseline gap-1 mt-auto relative z-10">
-                            <span class="text-[32px] font-black tracking-tighter leading-none">148</span>
-                            <span class="text-[11px] font-bold opacity-80 uppercase tracking-wider">ppm</span>
-                        </div>
+                <section class="delay-100">
+                    <div class="flex justify-between items-center mb-4 px-1">
+                        <h2 class="text-[16px] font-bold text-brand-textMain tracking-tight">Smart Water Metrics</h2>
+                        <a href="#" class="text-[13px] font-bold text-blue-600 hover:text-blue-700">See All</a>
                     </div>
 
-                    <!-- Temp Card -->
-                    <div class="bg-gradient-to-br from-rose-400 to-red-500 rounded-[28px] p-5 text-white shadow-[0_12px_24px_-8px_rgba(239,68,68,0.4)] relative overflow-hidden flex flex-col h-44 hover:-translate-y-1 transition-transform">
-                        <div class="absolute -left-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
-                        <div class="flex justify-between items-start mb-auto relative z-10">
-                            <span class="text-[13px] font-bold tracking-wide">Temp</span>
-                            <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                                <i class="fa-solid fa-temperature-half text-white text-[10px]"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl px-2 py-2.5 mt-4 mb-4 text-center relative z-10">
-                            <span class="text-[10px] font-bold tracking-widest uppercase">NORMAL</span>
-                        </div>
-
-                        <div class="flex items-baseline gap-1 mt-auto relative z-10">
-                            <span class="text-[32px] font-black tracking-tighter leading-none">19</span>
-                            <span class="text-[11px] font-bold opacity-80 uppercase tracking-wider">°C</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="animate-fade-in-up delay-200 mt-2">
-                <div class="flex items-center gap-2 mb-5 px-1">
-                    <div class="w-1 h-5 bg-brand-accent rounded-full"></div>
-                    <h2 class="text-[18px] font-extrabold text-brand-textMain tracking-tight">Quick Actions</h2>
-                </div>
-                
-                <div class="flex justify-between items-start px-2">
-                    <!-- Add Water -->
-                    <div class="flex flex-col items-center gap-2.5 cursor-pointer group">
-                        <div class="w-[60px] h-[60px] rounded-[22px] bg-brand-accent flex items-center justify-center shadow-[0_8px_20px_rgba(12,87,87,0.25)] transition-transform group-hover:scale-105">
-                            <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-accent">
-                                <i class="fa-solid fa-plus text-sm"></i>
-                            </div>
-                        </div>
-                        <span class="text-[12px] font-bold text-slate-700">Add Water</span>
-                    </div>
-
-                    <!-- Scan Bottle -->
-                    <div class="flex flex-col items-center gap-2.5 cursor-pointer group">
-                        <div class="w-[60px] h-[60px] rounded-[22px] bg-[#eef2f6] flex items-center justify-center text-brand-accent transition-transform group-hover:scale-105 group-hover:bg-[#e2e8f0]">
-                            <i class="fa-solid fa-expand text-[22px]"></i>
-                        </div>
-                        <span class="text-[12px] font-bold text-slate-700">Scan Bottle</span>
-                    </div>
-
-                    <!-- AI Coach -->
-                    <div class="flex flex-col items-center gap-2.5 cursor-pointer group">
-                        <div class="w-[60px] h-[60px] rounded-[22px] bg-[#eef2f6] flex items-center justify-center text-brand-accent transition-transform group-hover:scale-105 group-hover:bg-[#e2e8f0]">
-                            <i class="fa-regular fa-comments text-[22px]"></i>
-                        </div>
-                        <span class="text-[12px] font-bold text-slate-700">AI Coach</span>
-                    </div>
-
-                    <!-- Analytics -->
-                    <div class="flex flex-col items-center gap-2.5 cursor-pointer group">
-                        <div class="w-[60px] h-[60px] rounded-[22px] bg-[#eef2f6] flex items-center justify-center text-brand-accent transition-transform group-hover:scale-105 group-hover:bg-[#e2e8f0]">
-                            <i class="fa-solid fa-chart-column text-[22px]"></i>
-                        </div>
-                        <span class="text-[12px] font-bold text-slate-700">Analytics</span>
-                    </div>
-                </div>
-            </section>
-
-            <section class="animate-fade-in-up delay-300">
-                <div class="flex justify-between items-center mb-4 px-1">
-                    <h2 class="text-[16px] font-bold text-brand-textMain tracking-tight">Fitness & Activity Tracker</h2>
-                    <i class="fa-solid fa-ellipsis text-slate-400 hover:text-slate-600 cursor-pointer"></i>
-                </div>
-
-                <div class="space-y-3">
-                    <!-- Water Level -->
-                    <div class="bg-white rounded-[24px] p-4 shadow-soft border border-slate-100 flex items-center gap-4 hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-[18px] bg-slate-50 flex items-center justify-center text-slate-400">
-                            <i class="fa-solid fa-bottle-droplet text-xl"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-[14px] font-bold text-brand-textMain mb-2">Water Remaining</h3>
-                            <div class="w-full bg-slate-100 rounded-full h-2 mb-1.5 overflow-hidden">
-                                <div class="bg-blue-500 h-full rounded-full relative" style="width: 45%">
-                                    <div class="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-r from-transparent to-white/30"></div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- TDS Card -->
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-[28px] p-5 text-white shadow-[0_12px_24px_-8px_rgba(37,99,235,0.4)] relative overflow-hidden flex flex-col h-44 hover:-translate-y-1 transition-transform">
+                            <div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+                            <div class="flex justify-between items-start mb-auto relative z-10">
+                                <span class="text-[13px] font-bold tracking-wide">TDS Level</span>
+                                <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+                                    <i class="fa-solid fa-droplet text-white text-[10px]"></i>
                                 </div>
                             </div>
-                            <div class="flex justify-between text-[11px] font-bold text-slate-400">
-                                <span class="text-slate-700">850ml</span>
-                                <span>2000ml</span>
+                            
+                            <!-- Visual Chart Mockup -->
+                            <div class="h-10 w-full flex items-end gap-1.5 mb-3 opacity-90 relative z-10">
+                                <div class="w-1/5 bg-white/30 h-1/3 rounded-sm"></div>
+                                <div class="w-1/5 bg-white/50 h-2/3 rounded-sm"></div>
+                                <div class="w-1/5 bg-white/40 h-1/2 rounded-sm"></div>
+                                <div class="w-1/5 bg-white h-full rounded-sm shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
+                                <div class="w-1/5 bg-white/60 h-3/4 rounded-sm"></div>
+                            </div>
+
+                            <div class="flex items-baseline gap-1 mt-auto relative z-10">
+                                <span class="text-[32px] font-black tracking-tighter leading-none">148</span>
+                                <span class="text-[11px] font-bold opacity-80 uppercase tracking-wider">ppm</span>
+                            </div>
+                        </div>
+
+                        <!-- Temp Card -->
+                        <div class="bg-gradient-to-br from-rose-400 to-red-500 rounded-[28px] p-5 text-white shadow-[0_12px_24px_-8px_rgba(239,68,68,0.4)] relative overflow-hidden flex flex-col h-44 hover:-translate-y-1 transition-transform">
+                            <div class="absolute -left-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+                            <div class="flex justify-between items-start mb-auto relative z-10">
+                                <span class="text-[13px] font-bold tracking-wide">Temp</span>
+                                <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+                                    <i class="fa-solid fa-temperature-half text-white text-[10px]"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl px-2 py-2.5 mt-4 mb-4 text-center relative z-10">
+                                <span class="text-[10px] font-bold tracking-widest uppercase">NORMAL</span>
+                            </div>
+
+                            <div class="flex items-baseline gap-1 mt-auto relative z-10">
+                                <span class="text-[32px] font-black tracking-tighter leading-none">19</span>
+                                <span class="text-[11px] font-bold opacity-80 uppercase tracking-wider">°C</span>
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    <!-- Mineral Cartridge -->
-                    <div class="bg-white rounded-[24px] p-4 shadow-soft border border-slate-100 flex items-center gap-4 hover:shadow-md transition-shadow">
-                        <div class="w-12 h-12 rounded-[18px] bg-slate-50 flex items-center justify-center text-slate-400">
-                            <i class="fa-solid fa-filter text-xl"></i>
+                <section class="delay-200 mt-2">
+                    <div class="flex items-center gap-2 mb-5 px-1">
+                        <div class="w-1 h-5 bg-brand-accent rounded-full"></div>
+                        <h2 class="text-[18px] font-extrabold text-brand-textMain tracking-tight">Quick Actions</h2>
+                    </div>
+                    
+                    <div class="flex justify-between items-start px-2">
+                        <!-- Safety UV-C -->
+                        <div class="flex flex-col items-center gap-2 cursor-pointer group w-[92px]">
+                            <div class="relative w-[66px] h-[66px] rounded-[24px] bg-gradient-to-br from-[#0c5757] via-[#0f766e] to-[#14b8a6] flex items-center justify-center text-white shadow-[0_14px_26px_-10px_rgba(12,87,87,0.55)] transition-transform group-hover:scale-105 group-active:scale-95 overflow-hidden">
+                                <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_32%)]"></div>
+                                <div class="absolute -right-2 -bottom-3 w-10 h-10 rounded-full bg-white/10"></div>
+                                <i class="fa-solid fa-shield-halved text-[25px] relative z-10 drop-shadow-sm"></i>
+                                <span class="absolute right-2 top-2 w-5 h-5 rounded-full bg-white/95 text-brand-accent flex items-center justify-center shadow-sm">
+                                    <i class="fa-solid fa-sun text-[10px]"></i>
+                                </span>
+                            </div>
+                            <div class="flex flex-col items-center gap-1">
+                                <span class="text-[12px] font-black text-slate-800 leading-tight text-center">SAFETY UV-C</span>
+                                <span class="bg-emerald-50 text-emerald-700 border border-emerald-100 rounded-full px-2 py-0.5 text-[9.5px] font-extrabold leading-none whitespace-nowrap">99.9% germ-free</span>
+                            </div>
+                        </div>
+
+                        <!-- AI Coach -->
+                        <div class="flex flex-col items-center gap-2.5 cursor-pointer group">
+                            <div class="w-[60px] h-[60px] rounded-[22px] bg-[#eef2f6] flex items-center justify-center text-brand-accent transition-transform group-hover:scale-105 group-hover:bg-[#e2e8f0]">
+                                <i class="fa-regular fa-comments text-[22px]"></i>
+                            </div>
+                            <span class="text-[12px] font-bold text-slate-700">AI Coach</span>
+                        </div>
+
+                        <!-- Analytics -->
+                        <div onclick="switchTab('history')" class="flex flex-col items-center gap-2.5 cursor-pointer group">
+                            <div class="w-[60px] h-[60px] rounded-[22px] bg-[#eef2f6] flex items-center justify-center text-brand-accent transition-transform group-hover:scale-105 group-hover:bg-[#e2e8f0]">
+                                <i class="fa-solid fa-chart-column text-[22px]"></i>
+                            </div>
+                            <span class="text-[12px] font-bold text-slate-700">Analytics</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="delay-300">
+                    <div class="flex justify-between items-center mb-4 px-1">
+                        <h2 class="text-[16px] font-bold text-brand-textMain tracking-tight">Fitness & Activity Tracker</h2>
+                        <i class="fa-solid fa-ellipsis text-slate-400 hover:text-slate-600 cursor-pointer"></i>
+                    </div>
+
+                    <div class="space-y-3">
+                        <!-- Water Level -->
+                        <div class="bg-white rounded-[24px] p-4 shadow-soft border border-slate-100 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 rounded-[18px] bg-slate-50 flex items-center justify-center text-slate-400">
+                                <i class="fa-solid fa-bottle-droplet text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-[14px] font-bold text-brand-textMain mb-2">Water Remaining</h3>
+                                <div class="w-full bg-slate-100 rounded-full h-2 mb-1.5 overflow-hidden">
+                                    <div class="bg-blue-500 h-full rounded-full relative" style="width: 45%">
+                                        <div class="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-r from-transparent to-white/30"></div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between text-[11px] font-bold text-slate-400">
+                                    <span class="text-slate-700">850ml</span>
+                                    <span>2000ml</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mineral Cartridge -->
+                        <div class="bg-white rounded-[24px] p-4 shadow-soft border border-slate-100 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 rounded-[18px] bg-slate-50 flex items-center justify-center text-slate-400">
+                                <i class="fa-solid fa-filter text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-[14px] font-bold text-brand-textMain mb-2">Mineral Nutrition</h3>
+                                <div class="flex gap-2">
+                                    <span class="bg-teal-50 text-brand-accent text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide border border-teal-100">Magnesium</span>
+                                    <span class="bg-teal-50 text-brand-accent text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide border border-teal-100">Calcium</span>
+                                    <span class="bg-blue-50 text-blue-600 text-[10px] px-2.5 py-1 rounded-md font-bold border border-blue-100">+2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="delay-400">
+                    <div class="bg-white rounded-[32px] p-6 shadow-soft border border-slate-100 flex justify-between items-center hover:shadow-md transition-shadow">
+                        
+                        <!-- Mission -->
+                        <div class="flex flex-col items-center gap-2 flex-1">
+                            <div class="w-14 h-14 rounded-full border-[5px] border-brand-accent flex items-center justify-center">
+                                <i class="fa-solid fa-check text-green-500 text-xl"></i>
+                            </div>
+                            <span class="text-[13px] font-bold text-slate-400">Mission</span>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="w-[1px] h-12 bg-slate-100"></div>
+
+                        <!-- Streak -->
+                        <div class="flex flex-col items-center gap-0.5 flex-1">
+                            <span class="text-2xl mt-1 mb-1">🔥</span>
+                            <span class="text-[28px] font-black text-brand-textMain leading-none tracking-tight">12</span>
+                            <span class="text-[13px] font-bold text-slate-400 mt-1">Day Streak</span>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="w-[1px] h-12 bg-slate-100"></div>
+
+                        <!-- Badge -->
+                        <div class="flex flex-col items-center gap-2 flex-1">
+                            <div class="relative w-14 h-14 flex items-center justify-center">
+                                <svg class="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <path class="text-slate-100" stroke-width="4" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="text-amber-500" stroke-width="4" stroke-dasharray="75, 100" stroke="currentColor" fill="none" stroke-linecap="round" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span class="text-xl relative z-10">🏆</span>
+                            </div>
+                            <span class="text-[13px] font-bold text-slate-400">2d to Badge</span>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="delay-400">
+                    <div class="flex justify-between items-center mb-4 px-1">
+                        <h2 class="text-[16px] font-bold text-brand-textMain tracking-tight">Wellness AI Subscriptions</h2>
+                        <div class="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center cursor-pointer hover:bg-slate-300 transition-colors">
+                            <i class="fa-solid fa-question text-slate-500 text-[10px]"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-navy rounded-[32px] p-5 text-white relative overflow-hidden shadow-lg">
+                        <div class="absolute -right-12 -top-12 w-44 h-44 bg-blue-500/20 rounded-full blur-3xl"></div>
+                        <div class="absolute right-3 bottom-2 opacity-15">
+                            <i class="fa-solid fa-robot text-[118px] text-white"></i>
+                        </div>
+
+                        <div class="relative z-10 flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-[10px] font-extrabold text-blue-300 uppercase tracking-widest">Subscriptions</p>
+                                <h3 class="text-[18px] font-black tracking-tight mt-0.5">Choose your AI plan</h3>
+                            </div>
+                            <span class="bg-white/10 border border-white/10 text-cyan-200 text-[10px] font-extrabold px-2.5 py-1 rounded-full">1,922 chats</span>
+                        </div>
+
+                        <div class="relative z-10 grid grid-cols-3 gap-2.5">
+                            <!-- Basic Plan -->
+                            <div class="bg-white/10 border border-white/10 rounded-[20px] p-3 min-h-[126px] flex flex-col">
+                                <span class="text-[10px] font-black text-white uppercase tracking-wide mb-2">Basic</span>
+                                <div class="mb-2">
+                                    <span class="text-[18px] font-black leading-none">Free</span>
+                                </div>
+                                <p class="text-[10.5px] text-slate-300 font-semibold leading-snug">Daily tips<br>Basic coach</p>
+                                <span class="mt-auto text-[9px] font-extrabold text-emerald-300 bg-emerald-400/10 border border-emerald-400/20 rounded-full px-2 py-1 text-center">Active</span>
+                            </div>
+
+                            <!-- Pro Plan -->
+                            <div class="bg-blue-600 rounded-[20px] p-3 min-h-[126px] flex flex-col shadow-[0_14px_24px_-12px_rgba(37,99,235,0.85)] relative overflow-hidden">
+                                <div class="absolute -right-4 -top-4 w-14 h-14 rounded-full bg-white/15"></div>
+                                <span class="relative text-[10px] font-black text-white uppercase tracking-wide mb-2">Pro</span>
+                                <div class="relative mb-2">
+                                    <span class="text-[18px] font-black leading-none">$4</span>
+                                    <span class="text-[9px] font-bold text-blue-100">/mo</span>
+                                </div>
+                                <p class="relative text-[10.5px] text-blue-50 font-semibold leading-snug">Smart goals<br>Deep insights</p>
+                                <button class="relative mt-auto bg-white text-blue-700 rounded-full px-2 py-1 text-[9px] font-black">Upgrade</button>
+                            </div>
+
+                            <!-- Pro+ Plan -->
+                            <div class="bg-white rounded-[20px] p-3 min-h-[126px] flex flex-col text-slate-900 shadow-soft">
+                                <span class="text-[10px] font-black text-slate-900 uppercase tracking-wide mb-2">Pro+</span>
+                                <div class="mb-2">
+                                    <span class="text-[18px] font-black leading-none">$9</span>
+                                    <span class="text-[9px] font-bold text-slate-500">/mo</span>
+                                </div>
+                                <p class="text-[10.5px] text-slate-500 font-semibold leading-snug">Mineral AI<br>Priority coach</p>
+                                <button class="mt-auto bg-brand-accent text-white rounded-full px-2 py-1 text-[9px] font-black">Go Plus</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- HISTORY TAB VIEW -->
+            <div id="view-history" class="tab-view hidden space-y-6 animate-fade-in-up pt-8">
+                
+                <!-- Analytics & Trends Section Main Heading -->
+                <section>
+                    <div class="flex items-center gap-2 mb-4 px-1 pt-1">
+                        <div class="w-1.5 h-6 bg-brand-accent rounded-full"></div>
+                        <h1 class="text-2xl font-black text-brand-navy tracking-tight">Analytics & Trends</h1>
+                    </div>
+
+                    <div class="bg-white rounded-[28px] p-4 shadow-soft border border-slate-100 space-y-4">
+                        
+                        <!-- Metric Selector Tabs -->
+                        <div class="flex justify-around items-center pt-1 border-b border-slate-100 pb-3">
+                            <button onclick="setMetricTab('tds')" id="btn-metric-tds" class="px-5 py-1.5 rounded-xl border-2 border-blue-500 text-blue-600 font-bold text-xs bg-blue-50/40 transition-all shadow-sm">
+                                TDS
+                            </button>
+                            <button onclick="setMetricTab('water')" id="btn-metric-water" class="px-5 py-1.5 rounded-xl border-2 border-transparent text-slate-500 font-bold text-xs hover:text-slate-800 transition-all">
+                                Water
+                            </button>
+                            <button onclick="setMetricTab('minerals')" id="btn-metric-minerals" class="px-5 py-1.5 rounded-xl border-2 border-transparent text-slate-500 font-bold text-xs hover:text-slate-800 transition-all">
+                                Minerals
+                            </button>
+                        </div>
+
+                        <!-- Timeframe Selector Tabs -->
+                        <div class="bg-slate-100/80 p-1 rounded-2xl flex justify-between">
+                            <button onclick="setTimeframeTab('weekly')" id="btn-time-weekly" class="flex-1 py-1.5 rounded-xl text-slate-500 font-bold text-xs transition-all text-center">
+                                Weekly
+                            </button>
+                            <button onclick="setTimeframeTab('monthly')" id="btn-time-monthly" class="flex-1 py-1.5 rounded-xl bg-blue-600 text-white font-bold text-xs transition-all shadow-sm text-center">
+                                Monthly
+                            </button>
+                            <button onclick="setTimeframeTab('yearly')" id="btn-time-yearly" class="flex-1 py-1.5 rounded-xl text-slate-500 font-bold text-xs transition-all text-center">
+                                Yearly
+                            </button>
+                        </div>
+
+                        <!-- Visual Interactive Chart Container -->
+                        <div class="pt-2 px-1">
+                            <!-- Chart Header Legend -->
+                            <div class="flex justify-center items-center gap-2 mb-3">
+                                <span class="w-3 h-3 rounded-full bg-blue-500 inline-block shadow-sm"></span>
+                                <span id="chart-legend-text" class="text-xs font-bold text-slate-600">Average TDS</span>
+                            </div>
+
+                            <!-- SVG Chart View -->
+                            <div class="relative w-full h-44 flex flex-col justify-between">
+                                <!-- Y Axis Grid lines & Labels -->
+                                <div class="absolute inset-0 flex flex-col justify-between pointer-events-none text-[10px] font-semibold text-slate-400 pr-2">
+                                    <div class="flex items-center gap-2">
+                                        <span id="y-val-4" class="w-12 text-right">150 ppm</span>
+                                        <div class="flex-1 border-b border-dashed border-slate-200"></div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span id="y-val-3" class="w-12 text-right">113 ppm</span>
+                                        <div class="flex-1 border-b border-dashed border-slate-200"></div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span id="y-val-2" class="w-12 text-right">75 ppm</span>
+                                        <div class="flex-1 border-b border-dashed border-slate-200"></div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span id="y-val-1" class="w-12 text-right">38 ppm</span>
+                                        <div class="flex-1 border-b border-dashed border-slate-200"></div>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span id="y-val-0" class="w-12 text-right">0 ppm</span>
+                                        <div class="flex-1 border-b border-slate-200"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Interactive SVG Graph -->
+                                <div class="absolute inset-0 pl-14 pr-2 pt-2 pb-5">
+                                    <svg viewBox="0 0 300 120" preserveAspectRatio="none" class="w-full h-full overflow-visible">
+                                        <defs>
+                                            <linearGradient id="blueAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
+                                                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05"/>
+                                            </linearGradient>
+                                        </defs>
+
+                                        <!-- Target Goal Red Baseline line -->
+                                        <line x1="0" y1="48" x2="300" y2="48" stroke="#f43f5e" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="3,3" />
+
+                                        <!-- Area Fill -->
+                                        <path id="svg-area" d="M 10 48 L 90 48 L 170 48 L 270 12 L 270 110 L 10 110 Z" fill="url(#blueAreaGrad)" class="transition-all duration-500" />
+                                        
+                                        <!-- Main Curve Line -->
+                                        <path id="svg-line" d="M 10 48 C 60 48, 120 48, 170 48 C 220 48, 240 18, 270 12" fill="none" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round" class="transition-all duration-500" />
+
+                                        <!-- Data Circles -->
+                                        <g id="svg-dots">
+                                            <circle cx="10" cy="48" r="4.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" class="cursor-pointer hover:r-6 transition-all" />
+                                            <circle cx="90" cy="48" r="4.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" class="cursor-pointer hover:r-6 transition-all" />
+                                            <circle cx="170" cy="48" r="4.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" class="cursor-pointer hover:r-6 transition-all" />
+                                            <circle cx="270" cy="12" r="5" fill="#0284c7" stroke="#ffffff" stroke-width="2.5" class="cursor-pointer hover:r-7 transition-all shadow-md" />
+                                        </g>
+                                    </svg>
+                                </div>
+
+                                <!-- X Axis Labels -->
+                                <div class="mt-auto pl-14 pr-2 flex justify-between text-[11px] font-bold text-slate-400 relative z-10">
+                                    <span id="x-lbl-1">Week 1</span>
+                                    <span id="x-lbl-2">Week 2</span>
+                                    <span id="x-lbl-3">Week 3</span>
+                                    <span id="x-lbl-4">Week 4</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Scan Records Section (Matching Reference Image 2) -->
+                <section class="space-y-3 pb-4">
+                    <div class="flex items-center gap-2 mb-3.5 px-1">
+                        <div class="w-1 h-5 bg-brand-accent rounded-full"></div>
+                        <h2 class="text-[18px] font-extrabold text-brand-textMain tracking-tight">Scan Records</h2>
+                    </div>
+
+                    <!-- Record Item 1 -->
+                    <div class="bg-white rounded-[22px] p-3.5 shadow-soft border border-slate-100 flex items-center justify-between gap-3 hover:shadow-md transition-all cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-circle-check text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-[14px] font-extrabold text-slate-900 leading-tight">
+                                    58ppm <span class="text-slate-400 font-normal mx-0.5">→</span> 150ppm
+                                </div>
+                                <div class="text-[10.5px] font-semibold text-slate-400 mt-1">
+                                    Today · 08:42 · 21°C · 82% full · 4.2 ml dosed
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-xs font-extrabold text-emerald-500 shrink-0">Ready</span>
+                    </div>
+
+
+                    <!-- Record Item 3 -->
+                    <div class="bg-white rounded-[22px] p-3.5 shadow-soft border border-slate-100 flex items-center justify-between gap-3 hover:shadow-md transition-all cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-circle-check text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-[14px] font-extrabold text-slate-900 leading-tight">
+                                    72ppm <span class="text-slate-400 font-normal mx-0.5">→</span> 149ppm
+                                </div>
+                                <div class="text-[10.5px] font-semibold text-slate-400 mt-1">
+                                    Yesterday · 13:05 · 23°C · 90% full · 3.6 ml dosed
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-xs font-extrabold text-emerald-500 shrink-0">Ready</span>
+                    </div>
+
+                    <!-- Record Item 4 -->
+                    <div class="bg-white rounded-[22px] p-3.5 shadow-soft border border-slate-100 flex items-center justify-between gap-3 hover:shadow-md transition-all cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-circle-check text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-[14px] font-extrabold text-slate-900 leading-tight">
+                                    145ppm <span class="text-slate-400 font-normal mx-0.5">→</span> 145ppm
+                                </div>
+                                <div class="text-[10.5px] font-semibold text-slate-400 mt-1">
+                                    Jul 13 · 09:20 · 20°C · 75% full
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-xs font-extrabold text-emerald-500 shrink-0">Ready</span>
+                    </div>
+
+                    <!-- Record Item 5 -->
+                    <div class="bg-white rounded-[22px] p-3.5 shadow-soft border border-slate-100 flex items-center justify-between gap-3 hover:shadow-md transition-all cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-circle-check text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-[14px] font-extrabold text-slate-900 leading-tight">
+                                    44ppm <span class="text-slate-400 font-normal mx-0.5">→</span> 151ppm
+                                </div>
+                                <div class="text-[10.5px] font-semibold text-slate-400 mt-1">
+                                    Jul 12 · 18:44 · 22°C · 68% full · 5.1 ml dosed
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-xs font-extrabold text-emerald-500 shrink-0">Ready</span>
+                    </div>
+
+                    <!-- Record Item 6 -->
+                    <div class="bg-white rounded-[22px] p-3.5 shadow-soft border border-slate-100 flex items-center justify-between gap-3 hover:shadow-md transition-all cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-circle-check text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-[14px] font-extrabold text-slate-900 leading-tight">
+                                    88ppm <span class="text-slate-400 font-normal mx-0.5">→</span> 150ppm
+                                </div>
+                                <div class="text-[10.5px] font-semibold text-slate-400 mt-1">
+                                    Jul 12 · 07:55 · 19°C · 95% full · 3.1 ml dosed
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-xs font-extrabold text-emerald-500 shrink-0">Ready</span>
+                    </div>
+
+                </section>
+
+            </div>
+
+            <!-- DISCOVER TAB VIEW (Hydroid Showcase & Feature Banner) -->
+            <div id="view-discover" class="tab-view hidden space-y-6 animate-fade-in-up px-5 pt-8 pb-32">
+                
+                <!-- Discover Main Heading -->
+                <div class="flex items-center gap-2 mb-1">
+                    <div class="w-1.5 h-6 bg-brand-accent rounded-full"></div>
+                    <h1 class="text-2xl font-black text-brand-navy tracking-tight">Discover Hydroid</h1>
+                </div>
+                <p class="text-[13px] font-semibold text-slate-500 pl-3.5 -mt-2">Next-gen smart hydration technology & premium engineering</p>
+
+                <!-- Hero Product Feature Banner — Real Image -->
+                <div class="rounded-[28px] overflow-hidden shadow-2xl border border-slate-200 relative">
+                    <img 
+                        src="image.png"
+                        alt="HYDROID Smart Hydration Banner — Product by Veids Ventures pvt. ltd."
+                        class="w-full h-auto block"
+                        style="border-radius: 28px;"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    />
+                    <!-- Fallback if image cannot load -->
+                    <div style="display:none;" class="bg-gradient-to-br from-[#2c4048] via-[#1b2b32] to-[#122026] rounded-[28px] p-8 text-white text-center">
+                        <span class="text-4xl font-black tracking-[0.2em] text-white/30 uppercase block">HYDROID<sup class="text-sm font-normal text-white/50">™</sup></span>
+                        <span class="text-sm text-emerald-400 mt-2 block font-semibold">Smart Hydration</span>
+                        <p class="text-xs text-slate-400 mt-3">Product by Veids Ventures pvt. ltd.</p>
+                    </div>
+                </div>
+
+                <!-- 5 Key Technology Feature Callout Cards -->
+                <div class="space-y-3.5 pt-1">
+                    
+                    <div class="flex items-center gap-2 mb-2 px-1">
+                        <div class="w-1 h-4 bg-brand-accent rounded-full"></div>
+                        <h2 class="text-[15px] font-bold text-brand-textMain tracking-tight">Key Technologies</h2>
+                    </div>
+
+                    <!-- Feature 1: ActiveSense Tech -->
+                    <div class="bg-white rounded-[24px] p-4 shadow-soft border border-slate-100 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer group">
+                        <div class="w-12 h-12 rounded-[18px] bg-cyan-50 text-cyan-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-gem text-xl"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-[14px] font-bold text-brand-textMain mb-2">Mineral Nutrition</h3>
-                            <div class="flex gap-2">
-                                <span class="bg-teal-50 text-brand-accent text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide border border-teal-100">Magnesium</span>
-                                <span class="bg-teal-50 text-brand-accent text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide border border-teal-100">Calcium</span>
-                                <span class="bg-blue-50 text-blue-600 text-[10px] px-2.5 py-1 rounded-md font-bold border border-blue-100">+2</span>
+                            <div class="flex items-center justify-between mb-0.5">
+                                <h3 class="text-[14px] font-extrabold text-slate-900">ACTIVESENSE TECH</h3>
+                                <span class="text-[9px] font-extrabold text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100 uppercase">World First</span>
+                            </div>
+                            <p class="text-[12px] font-semibold text-slate-500 leading-snug">
+                                World's first active water scanning technology for real-time mineral and purity analysis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: AI Boosted -->
+                    <div class="bg-white rounded-[24px] p-4 shadow-soft border border-slate-100 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer group">
+                        <div class="w-12 h-12 rounded-[18px] bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-brain text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <h3 class="text-[14px] font-extrabold text-slate-900">AI BOOSTED</h3>
+                                <span class="text-[9px] font-extrabold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-md border border-purple-100 uppercase">Predictive</span>
+                            </div>
+                            <p class="text-[12px] font-semibold text-slate-500 leading-snug">
+                                Predictive insights and adaptive hydration reminders customized for your lifestyle.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Personalised For You -->
+                    <div class="bg-white rounded-[24px] p-4 shadow-soft border border-slate-100 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer group">
+                        <div class="w-12 h-12 rounded-[18px] bg-amber-50 text-amber-500 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-crown text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <h3 class="text-[14px] font-extrabold text-slate-900">PERSONALISED FOR YOU</h3>
+                                <span class="text-[9px] font-extrabold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-100 uppercase">Custom Pods</span>
+                            </div>
+                            <p class="text-[12px] font-semibold text-slate-500 leading-snug">
+                                Automated mineral dosing tailored specifically to your body's daily biometric needs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Safety Ensured -->
+                    <div class="bg-white rounded-[24px] p-4 shadow-soft border border-slate-100 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer group">
+                        <div class="w-12 h-12 rounded-[18px] bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <h3 class="text-[14px] font-extrabold text-slate-900">SAFETY ENSURED</h3>
+                                <span class="text-[9px] font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100 uppercase">UV-C Tech</span>
+                            </div>
+                            <p class="text-[12px] font-semibold text-slate-500 leading-snug">
+                                Deep UV-C sterilization keeps water and internal bottle components 99.9% germ-free.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5: Pure Engineering -->
+                    <div class="bg-white rounded-[24px] p-4 shadow-soft border border-slate-100 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer group">
+                        <div class="w-12 h-12 rounded-[18px] bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-microchip text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <h3 class="text-[14px] font-extrabold text-slate-900">PURE ENGINEERING</h3>
+                                <span class="text-[9px] font-extrabold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-100 uppercase">IP68 Rated</span>
+                            </div>
+                            <p class="text-[12px] font-semibold text-slate-500 leading-snug">
+                                Port-less, premium waterproof architecture built for extreme durability.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Brand Footer & Link -->
+                <div class="bg-slate-900 rounded-[28px] p-5 text-white shadow-soft text-center space-y-2 mt-4 border border-slate-800">
+                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Official Innovation</p>
+                    <h4 class="text-sm font-extrabold text-slate-100">Product by Veids Ventures pvt. ltd.</h4>
+                    <a href="https://www.veids.in" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors pt-1">
+                        <span>Reach out: www.veids.in</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- PROFILE TAB VIEW -->
+            <div id="view-profile" class="tab-view hidden animate-fade-in-up px-5 pt-8 pb-32 space-y-5">
+
+                <!-- Page Heading -->
+                <h1 class="text-2xl font-black text-brand-navy tracking-tight">Profile</h1>
+
+                <!-- Avatar / Identity Card -->
+                <div class="bg-white rounded-[24px] px-5 py-4 shadow-soft border border-slate-100 flex items-center gap-4">
+                    <!-- Avatar Circle -->
+                    <div class="w-[56px] h-[56px] rounded-full bg-brand-accent flex items-center justify-center shrink-0">
+                        <span class="text-xl font-black text-white">P</span>
+                    </div>
+                    <!-- Info -->
+                    <div class="flex flex-col gap-1.5">
+                        <span class="text-[14px] font-bold text-slate-800">pradip@hydroid.in</span>
+                        <div class="flex items-center gap-2">
+                            <span class="flex items-center gap-1 text-[11px] font-bold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-full">
+                                🌍 Indian
+                            </span>
+                            <span class="flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">
+                                ✓ Active Session
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manage Profile Section -->
+                <div class="space-y-3">
+                    <!-- Section Heading -->
+                    <div class="flex items-center gap-2 px-1">
+                        <div class="w-1 h-5 bg-brand-accent rounded-full"></div>
+                        <h2 class="text-[16px] font-black text-brand-navy tracking-tight">Manage Profile</h2>
+                    </div>
+
+                    <!-- User Information Row -->
+                    <div class="bg-white rounded-[20px] px-4 py-4 shadow-soft border border-slate-100 flex items-center gap-4 cursor-pointer hover:shadow-md transition-all"
+                         onclick="toggleSection('user-info-panel')">
+                        <div class="w-11 h-11 rounded-[14px] bg-blue-50 text-blue-500 flex items-center justify-center shrink-0">
+                            <i class="fa-regular fa-user text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-[14px] font-extrabold text-slate-900">User Information</p>
+                            <p class="text-[12px] font-semibold text-slate-400">Click to view all personal details</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[11px] font-bold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg">6 Details</span>
+                            <div class="w-8 h-8 rounded-full bg-brand-accent flex items-center justify-center">
+                                <i class="fa-solid fa-chevron-down text-white text-xs" id="icon-user-info"></i>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section class="animate-fade-in-up delay-400">
-                <div class="bg-white rounded-[32px] p-6 shadow-soft border border-slate-100 flex justify-between items-center hover:shadow-md transition-shadow">
-                    
-                    <!-- Mission -->
-                    <div class="flex flex-col items-center gap-2 flex-1">
-                        <div class="w-14 h-14 rounded-full border-[5px] border-brand-accent flex items-center justify-center">
-                            <i class="fa-solid fa-check text-green-500 text-xl"></i>
+                    <!-- User Information Expanded Panel -->
+                    <div id="user-info-panel" class="hidden bg-slate-50 rounded-[18px] px-4 py-3 border border-slate-100 space-y-2 text-[12px] font-semibold text-slate-600">
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span>Full Name</span><span class="text-slate-900 font-bold">Pradip</span>
                         </div>
-                        <span class="text-[13px] font-bold text-slate-400">Mission</span>
-                    </div>
-
-                    <!-- Divider -->
-                    <div class="w-[1px] h-12 bg-slate-100"></div>
-
-                    <!-- Streak -->
-                    <div class="flex flex-col items-center gap-0.5 flex-1">
-                        <span class="text-2xl mt-1 mb-1">🔥</span>
-                        <span class="text-[28px] font-black text-brand-textMain leading-none tracking-tight">12</span>
-                        <span class="text-[13px] font-bold text-slate-400 mt-1">Day Streak</span>
-                    </div>
-
-                    <!-- Divider -->
-                    <div class="w-[1px] h-12 bg-slate-100"></div>
-
-                    <!-- Badge -->
-                    <div class="flex flex-col items-center gap-2 flex-1">
-                        <div class="relative w-14 h-14 flex items-center justify-center">
-                            <!-- Progress ring -->
-                            <svg class="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-                                <path class="text-slate-100" stroke-width="4" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="text-amber-500" stroke-width="4" stroke-dasharray="75, 100" stroke="currentColor" fill="none" stroke-linecap="round" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                            </svg>
-                            <span class="text-xl relative z-10">🏆</span>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span>Email</span><span class="text-slate-900 font-bold">pradip@hydroid.in</span>
                         </div>
-                        <span class="text-[13px] font-bold text-slate-400">2d to Badge</span>
-                    </div>
-
-                </div>
-            </section>
-
-            <section class="animate-fade-in-up delay-400">
-                <div class="flex justify-between items-center mb-4 px-1">
-                    <h2 class="text-[16px] font-bold text-brand-textMain tracking-tight">Wellness AI Chatbot</h2>
-                    <div class="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center cursor-pointer hover:bg-slate-300 transition-colors">
-                        <i class="fa-solid fa-question text-slate-500 text-[10px]"></i>
-                    </div>
-                </div>
-
-                <div class="bg-brand-navy rounded-[32px] p-6 text-white relative overflow-hidden flex items-center shadow-lg hover:shadow-xl transition-shadow cursor-pointer group">
-                    <!-- Background Illustration / Glow -->
-                    <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl"></div>
-                    <div class="absolute right-0 bottom-0 opacity-40 transition-transform group-hover:scale-110 group-hover:-rotate-3 duration-500">
-                        <!-- Abstract robot representation -->
-                        <i class="fa-solid fa-robot text-[140px] text-slate-600 translate-y-8 translate-x-4"></i>
-                    </div>
-                    
-                    <div class="relative z-10 flex-1">
-                        <span class="bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md mb-3 inline-block tracking-wide">BASIC</span>
-                        <div class="flex items-end gap-2 mb-1">
-                            <span class="text-[40px] font-black tracking-tighter leading-none">1,922</span>
-                            <span class="text-[13px] font-bold text-slate-300 mb-1.5">Total</span>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span>Nationality</span><span class="text-slate-900 font-bold">Indian</span>
                         </div>
-                        <p class="text-[13px] text-slate-300 font-medium leading-snug w-3/4">AI Health Chatbot<br>Conversations</p>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span>Daily Goal</span><span class="text-brand-accent font-bold">2,000 ml</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span>Bottle Model</span><span class="text-slate-900 font-bold">Hydroid Pro</span>
+                        </div>
+                        <div class="flex justify-between py-1.5">
+                            <span>Firmware</span><span class="text-brand-accent font-bold">v2.4.1 (Latest)</span>
+                        </div>
                     </div>
-                    
-                    <div class="relative z-10 flex flex-col justify-end mt-auto h-full pb-1 pr-2">
-                        <button class="w-12 h-12 rounded-[16px] bg-blue-600 text-white flex items-center justify-center shadow-[0_8px_16px_rgba(37,99,235,0.4)] group-hover:bg-blue-500 transition-colors">
-                            <i class="fa-solid fa-plus text-xl"></i>
-                        </button>
+
+                    <!-- Settings & Preferences Row -->
+                    <div class="bg-white rounded-[20px] px-4 py-4 shadow-soft border border-slate-100 flex items-center gap-4 cursor-pointer hover:shadow-md transition-all"
+                         onclick="toggleSection('settings-panel')">
+                        <div class="w-11 h-11 rounded-[14px] bg-purple-50 text-purple-500 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-gear text-lg"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-[14px] font-extrabold text-slate-900">Settings & Preferences</p>
+                            <p class="text-[12px] font-semibold text-slate-400">Click to manage all settings</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[11px] font-bold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-100">7 Options</span>
+                            <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center">
+                                <i class="fa-solid fa-chevron-down text-white text-xs" id="icon-settings"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Settings Expanded Panel -->
+                    <div id="settings-panel" class="hidden bg-slate-50 rounded-[18px] px-4 py-3 border border-slate-100 space-y-2 text-[12px] font-semibold text-slate-600">
+                        <div class="flex justify-between items-center py-1.5 border-b border-slate-100">
+                            <span>Notifications</span>
+                            <span class="w-8 h-4 bg-brand-accent rounded-full inline-block relative"><span class="absolute right-0.5 top-0.5 w-3 h-3 bg-white rounded-full shadow-sm"></span></span>
+                        </div>
+                        <div class="flex justify-between items-center py-1.5 border-b border-slate-100">
+                            <span>Dark Mode</span>
+                            <span class="w-8 h-4 bg-slate-300 rounded-full inline-block relative"><span class="absolute left-0.5 top-0.5 w-3 h-3 bg-white rounded-full shadow-sm"></span></span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span>Language</span><span class="text-slate-900 font-bold">English</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span>Units</span><span class="text-slate-900 font-bold">Metric (ml)</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span>Reminder Interval</span><span class="text-brand-accent font-bold">Every 2 hrs</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-100">
+                            <span>Auto-dose</span>
+                            <span class="w-8 h-4 bg-brand-accent rounded-full inline-block relative"><span class="absolute right-0.5 top-0.5 w-3 h-3 bg-white rounded-full shadow-sm"></span></span>
+                        </div>
+                        <div class="flex justify-between py-1.5">
+                            <span>UV-C Schedule</span><span class="text-slate-900 font-bold">Every 6 hrs</span>
+                        </div>
                     </div>
                 </div>
-            </section>
+
+                <!-- Logout Button -->
+                <button class="w-full py-4 rounded-[20px] border-2 border-red-500 text-red-500 font-extrabold text-[15px] flex items-center justify-center gap-2.5 bg-white hover:bg-red-50 active:scale-95 transition-all shadow-soft mt-2">
+                    <i class="fa-solid fa-arrow-right-from-bracket text-base"></i>
+                    Logout
+                </button>
+
+                <!-- Version Footer -->
+                <p class="text-center text-[12px] font-semibold text-slate-400 pt-1">
+                    Hydroid v1.0.0 · Veids Ventures
+                </p>
+
+            </div>
 
         </main>
 
@@ -384,34 +887,56 @@
             <!-- White rounded pill navigation container -->
             <div class="w-full glass-panel rounded-[36px] shadow-[0_20px_40px_rgba(0,0,0,0.1)] h-[80px] relative flex justify-between items-center px-7 pointer-events-auto border border-white/60">
                 
-                <!-- Home (Active) -->
-                <button class="flex flex-col items-center justify-center gap-1.5 w-12 relative group">
-                    <div class="absolute -top-5 w-6 h-1 rounded-full bg-brand-accent"></div>
-                    <i class="fa-solid fa-house text-[22px] text-brand-accent"></i>
-                    <span class="text-[11px] font-bold text-brand-accent">Home</span>
+                <!-- Home (Active by default) -->
+                <button onclick="switchTab('home')" id="nav-btn-home" class="nav-item flex flex-col items-center justify-center gap-1.5 w-12 relative group text-brand-accent">
+                    <div id="nav-indicator" class="absolute -top-5 w-6 h-1 rounded-full bg-brand-accent transition-all duration-300"></div>
+                    <i class="fa-solid fa-house text-[22px]"></i>
+                    <span class="text-[11px] font-bold">Home</span>
                 </button>
                 
                 <!-- History -->
-                <button class="flex flex-col items-center justify-center gap-1.5 w-12 text-slate-400 hover:text-brand-accent transition-colors">
+                <button onclick="switchTab('history')" id="nav-btn-history" class="nav-item flex flex-col items-center justify-center gap-1.5 w-12 text-slate-400 hover:text-brand-accent transition-colors">
                     <i class="fa-regular fa-clock text-[22px]"></i>
                     <span class="text-[11px] font-bold">History</span>
                 </button>
 
-                <!-- Center FAB -->
+                <!-- Center FAB — Hydroid Coach Robot -->
                 <div class="relative -top-7">
-                    <button class="w-[70px] h-[70px] bg-brand-accent rounded-full text-white flex items-center justify-center shadow-float hover:scale-105 transition-transform active:scale-95 border-[6px] border-brand-bg">
-                        <i class="fa-solid fa-expand text-2xl"></i>
+                    <button onclick="openCoach()" class="w-[70px] h-[70px] bg-brand-accent rounded-full text-white flex items-center justify-center shadow-float hover:scale-105 transition-transform active:scale-95 border-[6px] border-brand-bg group" title="Hydroid Coach">
+                        <!-- Robot Face SVG -->
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <!-- Head -->
+                          <rect x="6" y="10" width="24" height="20" rx="5" fill="white" fill-opacity="0.95"/>
+                          <!-- Antenna -->
+                          <rect x="17" y="4" width="2" height="6" rx="1" fill="white" fill-opacity="0.8"/>
+                          <circle cx="18" cy="4" r="2.5" fill="white"/>
+                          <!-- Eyes -->
+                          <rect x="10" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                          <rect x="21" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                          <!-- Eye shine -->
+                          <rect x="12" y="17" width="1.5" height="1.5" rx="0.5" fill="white" fill-opacity="0.7"/>
+                          <rect x="23" y="17" width="1.5" height="1.5" rx="0.5" fill="white" fill-opacity="0.7"/>
+                          <!-- Mouth -->
+                          <rect x="11" y="24" width="14" height="3" rx="1.5" fill="#0c5757" fill-opacity="0.6"/>
+                          <!-- Mouth grid lines -->
+                          <rect x="14.5" y="24" width="1" height="3" fill="white" fill-opacity="0.4"/>
+                          <rect x="18" y="24" width="1" height="3" fill="white" fill-opacity="0.4"/>
+                          <rect x="21.5" y="24" width="1" height="3" fill="white" fill-opacity="0.4"/>
+                          <!-- Ears -->
+                          <rect x="3" y="16" width="3" height="6" rx="1.5" fill="white" fill-opacity="0.6"/>
+                          <rect x="30" y="16" width="3" height="6" rx="1.5" fill="white" fill-opacity="0.6"/>
+                        </svg>
                     </button>
                 </div>
 
                 <!-- Discover -->
-                <button class="flex flex-col items-center justify-center gap-1.5 w-12 text-slate-400 hover:text-brand-accent transition-colors">
+                <button onclick="switchTab('discover')" id="nav-btn-discover" class="nav-item flex flex-col items-center justify-center gap-1.5 w-12 text-slate-400 hover:text-brand-accent transition-colors">
                     <i class="fa-solid fa-bag-shopping text-[22px]"></i>
                     <span class="text-[11px] font-bold">Discover</span>
                 </button>
 
                 <!-- Profile -->
-                <button class="flex flex-col items-center justify-center gap-1.5 w-12 text-slate-400 hover:text-brand-accent transition-colors">
+                <button onclick="switchTab('profile')" id="nav-btn-profile" class="nav-item flex flex-col items-center justify-center gap-1.5 w-12 text-slate-400 hover:text-brand-accent transition-colors">
                     <i class="fa-regular fa-user text-[22px]"></i>
                     <span class="text-[11px] font-bold">Profile</span>
                 </button>
@@ -421,17 +946,358 @@
         <!-- Gradient overlay to blend list under nav smoothly -->
         <div class="absolute bottom-0 w-full h-36 bg-gradient-to-t from-brand-bg via-brand-bg/80 to-transparent pointer-events-none z-40"></div>
 
+        <!-- ====== HYDROID COACH CHAT MODAL ====== -->
+        <div id="coach-modal" class="absolute inset-0 z-[100] flex flex-col hidden" style="background:rgba(15,24,40,0.55); backdrop-filter:blur(6px);">
+            <!-- Modal Panel -->
+            <div class="absolute bottom-0 left-0 right-0 bg-[#f7f9fc] rounded-t-[36px] shadow-2xl flex flex-col overflow-hidden" style="height:88%;">
+
+                <!-- Header -->
+                <div class="bg-gradient-to-r from-brand-navy to-[#1a3a4a] px-5 pt-5 pb-4 flex items-center justify-between shrink-0">
+                    <div class="flex items-center gap-3">
+                        <!-- Mini robot avatar -->
+                        <div class="w-10 h-10 rounded-2xl bg-brand-accent flex items-center justify-center shadow-md">
+                            <svg width="22" height="22" viewBox="0 0 36 36" fill="none">
+                                <rect x="6" y="10" width="24" height="20" rx="5" fill="white" fill-opacity="0.95"/>
+                                <rect x="17" y="4" width="2" height="6" rx="1" fill="white" fill-opacity="0.8"/>
+                                <circle cx="18" cy="4" r="2.5" fill="white"/>
+                                <rect x="10" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                                <rect x="21" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                                <rect x="12" y="17" width="1.5" height="1.5" rx="0.5" fill="white" fill-opacity="0.7"/>
+                                <rect x="23" y="17" width="1.5" height="1.5" rx="0.5" fill="white" fill-opacity="0.7"/>
+                                <rect x="11" y="24" width="14" height="3" rx="1.5" fill="#0c5757" fill-opacity="0.6"/>
+                                <rect x="14.5" y="24" width="1" height="3" fill="white" fill-opacity="0.4"/>
+                                <rect x="18" y="24" width="1" height="3" fill="white" fill-opacity="0.4"/>
+                                <rect x="3" y="16" width="3" height="6" rx="1.5" fill="white" fill-opacity="0.6"/>
+                                <rect x="30" y="16" width="3" height="6" rx="1.5" fill="white" fill-opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-white font-black text-[16px] tracking-tight">Hydroid Coach</h2>
+                            <p class="text-emerald-400 text-[11px] font-bold flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+                                AI · Always here for you
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="closeCoach()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                        <i class="fa-solid fa-xmark text-base"></i>
+                    </button>
+                </div>
+
+                <!-- Chat Messages -->
+                <div id="coach-messages" class="flex-1 overflow-y-auto px-4 py-5 space-y-4 no-scrollbar">
+                    <!-- Welcome bubble -->
+                    <div class="flex items-end gap-2">
+                        <div class="w-7 h-7 rounded-full bg-brand-accent flex items-center justify-center shrink-0 mb-0.5">
+                            <svg width="14" height="14" viewBox="0 0 36 36" fill="none">
+                                <rect x="6" y="10" width="24" height="20" rx="5" fill="white"/>
+                                <rect x="10" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                                <rect x="21" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                                <rect x="11" y="24" width="14" height="3" rx="1.5" fill="#0c5757" fill-opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="bg-white rounded-[18px] rounded-bl-[6px] px-4 py-3 shadow-soft border border-slate-100 max-w-[78%]">
+                            <p class="text-[13px] font-semibold text-slate-800 leading-snug">Hey Pradip! 👋 I'm your <strong>Hydroid Coach</strong>. I can help with hydration tips, bottle stats, mineral advice, and more!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Suggestions -->
+                <div id="coach-suggestions" class="px-4 pb-2 flex gap-2 overflow-x-auto no-scrollbar shrink-0">
+                    <button onclick="sendSuggestion(this)" class="shrink-0 bg-white border border-slate-200 text-brand-accent text-[12px] font-bold px-3.5 py-2 rounded-full shadow-sm hover:bg-brand-accent hover:text-white transition">💧 My water intake today</button>
+                    <button onclick="sendSuggestion(this)" class="shrink-0 bg-white border border-slate-200 text-brand-accent text-[12px] font-bold px-3.5 py-2 rounded-full shadow-sm hover:bg-brand-accent hover:text-white transition">🧂 Best minerals for me</button>
+                    <button onclick="sendSuggestion(this)" class="shrink-0 bg-white border border-slate-200 text-brand-accent text-[12px] font-bold px-3.5 py-2 rounded-full shadow-sm hover:bg-brand-accent hover:text-white transition">🔬 Explain TDS levels</button>
+                    <button onclick="sendSuggestion(this)" class="shrink-0 bg-white border border-slate-200 text-brand-accent text-[12px] font-bold px-3.5 py-2 rounded-full shadow-sm hover:bg-brand-accent hover:text-white transition">⚡ Boost hydration tips</button>
+                </div>
+
+                <!-- Input Row -->
+                <div class="px-4 pb-6 pt-2 flex items-center gap-3 shrink-0 bg-[#f7f9fc] border-t border-slate-100">
+                    <input id="coach-input" type="text" placeholder="Ask your Hydroid Coach..."
+                        class="flex-1 bg-white border border-slate-200 rounded-2xl px-4 py-3 text-[13px] font-semibold text-slate-800 placeholder-slate-400 outline-none focus:border-brand-accent shadow-sm"
+                        onkeydown="if(event.key==='Enter') sendMessage()" />
+                    <button onclick="sendMessage()" class="w-11 h-11 bg-brand-accent rounded-2xl flex items-center justify-center shrink-0 hover:scale-105 transition-transform active:scale-95 shadow-md">
+                        <i class="fa-solid fa-paper-plane text-white text-sm"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <!-- ====== END COACH MODAL ======-->
+
     </div>
 
     <script>
-        // Set actual date formatted like "Tue, 25 Jan 2025"
+        // Set actual date formatted like "Tue, 3 Aug 2026"
         const dateElement = document.getElementById('current-date');
         if (dateElement) {
             const options = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
-            // Set date to 3 Aug 2026 (August is index 7)
             const today = new Date(2026, 7, 3);
             dateElement.textContent = today.toLocaleDateString('en-GB', options);
         }
+
+        // ====== HYDROID COACH CHAT ======
+        function openCoach() {
+            const modal = document.getElementById('coach-modal');
+            modal.classList.remove('hidden');
+            modal.style.animation = 'none';
+            // Slide panel up
+            const panel = modal.querySelector('div');
+            panel.style.transform = 'translateY(100%)';
+            panel.style.transition = 'transform 0.35s cubic-bezier(0.32,0,0,1)';
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => { panel.style.transform = 'translateY(0)'; });
+            });
+            setTimeout(() => { document.getElementById('coach-input').focus(); }, 400);
+        }
+
+        function closeCoach() {
+            const modal = document.getElementById('coach-modal');
+            const panel = modal.querySelector('div');
+            panel.style.transform = 'translateY(100%)';
+            setTimeout(() => modal.classList.add('hidden'), 340);
+        }
+
+        // Close if tapping backdrop
+        document.getElementById('coach-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeCoach();
+        });
+
+        const coachResponses = {
+            'water intake': "💧 Today you've consumed <strong>1,420 ml</strong> out of your <strong>2,000 ml</strong> goal — that's 71%! Keep going, you're almost there. Try to drink another 2 glasses before 8 PM. 🎯",
+            'minerals': "🧂 Based on your last scan (TDS: 176 ppm), your water has a <strong>balanced mineral profile</strong>. I recommend the <em>Electrolyte Boost</em> pod for post-workout recovery and the <em>Calm Blend</em> pod for evenings.",
+            'tds': "🔬 TDS stands for <strong>Total Dissolved Solids</strong> — it measures minerals, salts, and metals dissolved in your water. Ideal drinking water is <strong>50–150 ppm</strong>. Your current level is 176 ppm, which is perfectly safe!",
+            'hydration': "⚡ Top hydration tips for you:\n1. Drink a glass of water <strong>right after waking up</strong>\n2. Set reminders <strong>every 2 hours</strong>\n3. Add electrolytes after workouts\n4. Your Hydroid UV-C scan keeps your water <strong>99.9% pure</strong>. Stay consistent! 💪",
+            'default': "🤖 Great question! I'm analyzing your bottle data... Your hydration pattern looks <strong>on track</strong> for today. Tap one of the suggestions below for quick insights, or ask me anything about your water quality, minerals, or daily goals!"
+        };
+
+        function getCoachReply(text) {
+            const t = text.toLowerCase();
+            if (t.includes('water') || t.includes('intake') || t.includes('today')) return coachResponses['water intake'];
+            if (t.includes('mineral') || t.includes('electrolyte') || t.includes('salt')) return coachResponses['minerals'];
+            if (t.includes('tds') || t.includes('dissolved') || t.includes('ppm') || t.includes('explain')) return coachResponses['tds'];
+            if (t.includes('hydration') || t.includes('tip') || t.includes('boost')) return coachResponses['hydration'];
+            return coachResponses['default'];
+        }
+
+        function appendMessage(text, sender) {
+            const container = document.getElementById('coach-messages');
+            const isBot = sender === 'bot';
+            const wrap = document.createElement('div');
+            wrap.className = 'flex items-end gap-2' + (isBot ? '' : ' justify-end');
+
+            if (isBot) {
+                wrap.innerHTML = `
+                <div class="w-7 h-7 rounded-full bg-brand-accent flex items-center justify-center shrink-0 mb-0.5">
+                    <svg width="14" height="14" viewBox="0 0 36 36" fill="none">
+                        <rect x="6" y="10" width="24" height="20" rx="5" fill="white"/>
+                        <rect x="10" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                        <rect x="21" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                        <rect x="11" y="24" width="14" height="3" rx="1.5" fill="#0c5757" fill-opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="bg-white rounded-[18px] rounded-bl-[6px] px-4 py-3 shadow-soft border border-slate-100 max-w-[78%]">
+                    <p class="text-[13px] font-semibold text-slate-800 leading-snug">${text}</p>
+                </div>`;
+            } else {
+                wrap.innerHTML = `
+                <div class="bg-brand-accent rounded-[18px] rounded-br-[6px] px-4 py-3 shadow-soft max-w-[78%]">
+                    <p class="text-[13px] font-semibold text-white leading-snug">${text}</p>
+                </div>`;
+            }
+            container.appendChild(wrap);
+            container.scrollTop = container.scrollHeight;
+            return wrap;
+        }
+
+        function showTyping() {
+            const container = document.getElementById('coach-messages');
+            const wrap = document.createElement('div');
+            wrap.id = 'coach-typing';
+            wrap.className = 'flex items-end gap-2';
+            wrap.innerHTML = `
+            <div class="w-7 h-7 rounded-full bg-brand-accent flex items-center justify-center shrink-0 mb-0.5">
+                <svg width="14" height="14" viewBox="0 0 36 36" fill="none">
+                    <rect x="6" y="10" width="24" height="20" rx="5" fill="white"/>
+                    <rect x="10" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                    <rect x="21" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                    <rect x="11" y="24" width="14" height="3" rx="1.5" fill="#0c5757" fill-opacity="0.5"/>
+                </svg>
+            </div>
+            <div class="bg-white rounded-[18px] rounded-bl-[6px] px-4 py-3 shadow-soft border border-slate-100">
+                <span class="flex gap-1 items-center h-4">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent/60 animate-bounce" style="animation-delay:0ms"></span>
+                    <span class="w-2 h-2 rounded-full bg-brand-accent/60 animate-bounce" style="animation-delay:150ms"></span>
+                    <span class="w-2 h-2 rounded-full bg-brand-accent/60 animate-bounce" style="animation-delay:300ms"></span>
+                </span>
+            </div>`;
+            container.appendChild(wrap);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function removeTyping() {
+            const t = document.getElementById('coach-typing');
+            if (t) t.remove();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('coach-input');
+            const text = input.value.trim();
+            if (!text) return;
+            input.value = '';
+            appendMessage(text, 'user');
+            // Hide suggestions after first message
+            document.getElementById('coach-suggestions').style.display = 'none';
+            showTyping();
+            setTimeout(() => {
+                removeTyping();
+                appendMessage(getCoachReply(text), 'bot');
+            }, 1200 + Math.random() * 600);
+        }
+
+        function sendSuggestion(btn) {
+            const text = btn.innerText.replace(/^[^\s]+\s/, ''); // strip emoji
+            document.getElementById('coach-input').value = btn.innerText;
+            sendMessage();
+        }
+
+        // Profile Section Toggle (expand/collapse)
+        function toggleSection(panelId) {
+            const panel = document.getElementById(panelId);
+            if (!panel) return;
+            const isHidden = panel.classList.contains('hidden');
+            panel.classList.toggle('hidden');
+            // Rotate chevron icon
+            const iconMap = { 'user-info-panel': 'icon-user-info', 'settings-panel': 'icon-settings' };
+            const icon = document.getElementById(iconMap[panelId]);
+            if (icon) {
+                icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+                icon.style.transition = 'transform 0.25s ease';
+            }
+        }
+
+        // Tab Switching Logic
+        function switchTab(tabName) {
+            const appHeader = document.getElementById('app-header');
+            if (appHeader) {
+                if (tabName === 'home') {
+                    appHeader.classList.remove('hidden');
+                } else {
+                    appHeader.classList.add('hidden');
+                }
+            }
+            const views = ['home', 'history', 'discover', 'profile'];
+            views.forEach(v => {
+                const el = document.getElementById(`view-${v}`);
+                const btn = document.getElementById(`nav-btn-${v}`);
+                if (el) {
+                    if (v === tabName) {
+                        el.classList.remove('hidden');
+                    } else {
+                        el.classList.add('hidden');
+                    }
+                }
+                if (btn) {
+                    if (v === tabName) {
+                        btn.className = "nav-item flex flex-col items-center justify-center gap-1.5 w-12 relative group text-brand-accent";
+                    } else {
+                        btn.className = "nav-item flex flex-col items-center justify-center gap-1.5 w-12 text-slate-400 hover:text-brand-accent transition-colors";
+                    }
+                }
+            });
+
+            // Move indicator bar
+            const indicator = document.getElementById('nav-indicator');
+            const targetBtn = document.getElementById(`nav-btn-${tabName}`);
+            if (indicator && targetBtn) {
+                targetBtn.appendChild(indicator);
+            }
+        }
+
+        // History Chart Interactive Controls
+        let currentMetric = 'tds';
+        let currentTimeframe = 'monthly';
+
+        const chartDatasets = {
+            tds: {
+                weekly: { legend: 'Average TDS (ppm)', y: ['200 ppm', '150 ppm', '100 ppm', '50 ppm', '0 ppm'], x: ['Mon', 'Wed', 'Fri', 'Sun'], area: 'M 10 70 L 90 50 L 170 30 L 270 20 L 270 110 L 10 110 Z', line: 'M 10 70 C 60 55, 120 40, 170 30 C 220 25, 240 22, 270 20', dots: [[10,70],[90,50],[170,30],[270,20]] },
+                monthly: { legend: 'Average TDS', y: ['150 ppm', '113 ppm', '75 ppm', '38 ppm', '0 ppm'], x: ['Week 1', 'Week 2', 'Week 3', 'Week 4'], area: 'M 10 48 L 90 48 L 170 48 L 270 12 L 270 110 L 10 110 Z', line: 'M 10 48 C 60 48, 120 48, 170 48 C 220 48, 240 18, 270 12', dots: [[10,48],[90,48],[170,48],[270,12]] },
+                yearly: { legend: 'Average TDS (ppm)', y: ['300 ppm', '225 ppm', '150 ppm', '75 ppm', '0 ppm'], x: ['Q1', 'Q2', 'Q3', 'Q4'], area: 'M 10 60 L 90 40 L 170 50 L 270 30 L 270 110 L 10 110 Z', line: 'M 10 60 C 60 45, 120 45, 170 50 C 220 40, 240 32, 270 30', dots: [[10,60],[90,40],[170,50],[270,30]] }
+            },
+            water: {
+                weekly: { legend: 'Daily Intake (ml)', y: ['2500 ml', '1875 ml', '1250 ml', '625 ml', '0 ml'], x: ['Mon', 'Wed', 'Fri', 'Sun'], area: 'M 10 40 L 90 30 L 170 55 L 270 15 L 270 110 L 10 110 Z', line: 'M 10 40 C 60 32, 120 45, 170 55 C 220 30, 240 18, 270 15', dots: [[10,40],[90,30],[170,55],[270,15]] },
+                monthly: { legend: 'Monthly Intake (ml)', y: ['2500 ml', '1875 ml', '1250 ml', '625 ml', '0 ml'], x: ['Week 1', 'Week 2', 'Week 3', 'Week 4'], area: 'M 10 65 L 90 35 L 170 25 L 270 18 L 270 110 L 10 110 Z', line: 'M 10 65 C 60 45, 120 28, 170 25 C 220 20, 240 19, 270 18', dots: [[10,65],[90,35],[170,25],[270,18]] },
+                yearly: { legend: 'Quarterly Water (L)', y: ['600 L', '450 L', '300 L', '150 L', '0 L'], x: ['Q1', 'Q2', 'Q3', 'Q4'], area: 'M 10 50 L 90 30 L 170 35 L 270 20 L 270 110 L 10 110 Z', line: 'M 10 50 C 60 35, 120 32, 170 35 C 220 25, 240 22, 270 20', dots: [[10,50],[90,30],[170,35],[270,20]] }
+            },
+            minerals: {
+                weekly: { legend: 'Minerals Added (ml)', y: ['20 ml', '15 ml', '10 ml', '5 ml', '0 ml'], x: ['Mon', 'Wed', 'Fri', 'Sun'], area: 'M 10 80 L 90 60 L 170 40 L 270 25 L 270 110 L 10 110 Z', line: 'M 10 80 C 60 70, 120 50, 170 40 C 220 30, 240 28, 270 25', dots: [[10,80],[90,60],[170,40],[270,25]] },
+                monthly: { legend: 'Minerals Added (ml)', y: ['20 ml', '15 ml', '10 ml', '5 ml', '0 ml'], x: ['Week 1', 'Week 2', 'Week 3', 'Week 4'], area: 'M 10 75 L 90 55 L 170 45 L 270 30 L 270 110 L 10 110 Z', line: 'M 10 75 C 60 65, 120 50, 170 45 C 220 35, 240 32, 270 30', dots: [[10,75],[90,55],[170,45],[270,30]] },
+                yearly: { legend: 'Minerals Added (ml)', y: ['100 ml', '75 ml', '50 ml', '25 ml', '0 ml'], x: ['Q1', 'Q2', 'Q3', 'Q4'], area: 'M 10 70 L 90 40 L 170 30 L 270 15 L 270 110 L 10 110 Z', line: 'M 10 70 C 60 50, 120 35, 170 30 C 220 20, 240 18, 270 15', dots: [[10,70],[90,40],[170,30],[270,15]] }
+            }
+        };
+
+        function setMetricTab(metric) {
+            currentMetric = metric;
+            ['tds', 'water', 'minerals'].forEach(m => {
+                const btn = document.getElementById(`btn-metric-${m}`);
+                if (btn) {
+                    if (m === metric) {
+                        btn.className = "px-5 py-1.5 rounded-xl border-2 border-blue-500 text-blue-600 font-bold text-xs bg-blue-50/40 transition-all shadow-sm";
+                    } else {
+                        btn.className = "px-5 py-1.5 rounded-xl border-2 border-transparent text-slate-500 font-bold text-xs hover:text-slate-800 transition-all";
+                    }
+                }
+            });
+            updateChart();
+        }
+
+        function setTimeframeTab(tf) {
+            currentTimeframe = tf;
+            ['weekly', 'monthly', 'yearly'].forEach(t => {
+                const btn = document.getElementById(`btn-time-${t}`);
+                if (btn) {
+                    if (t === tf) {
+                        btn.className = "flex-1 py-1.5 rounded-xl bg-blue-600 text-white font-bold text-xs transition-all shadow-sm text-center";
+                    } else {
+                        btn.className = "flex-1 py-1.5 rounded-xl text-slate-500 font-bold text-xs transition-all text-center";
+                    }
+                }
+            });
+            updateChart();
+        }
+
+        function updateChart() {
+            const data = chartDatasets[currentMetric][currentTimeframe];
+            if (!data) return;
+
+            document.getElementById('chart-legend-text').textContent = data.legend;
+            
+            // Update Y axis labels
+            for (let i = 0; i < 5; i++) {
+                const lbl = document.getElementById(`y-val-${i}`);
+                if (lbl) lbl.textContent = data.y[4 - i];
+            }
+
+            // Update X axis labels
+            for (let i = 1; i <= 4; i++) {
+                const lbl = document.getElementById(`x-lbl-${i}`);
+                if (lbl) lbl.textContent = data.x[i - 1];
+            }
+
+            // Update SVG line and area paths
+            document.getElementById('svg-area').setAttribute('d', data.area);
+            document.getElementById('svg-line').setAttribute('d', data.line);
+
+            // Update dots
+            const dotsGroup = document.getElementById('svg-dots');
+            if (dotsGroup) {
+                dotsGroup.innerHTML = data.dots.map((pt, idx) => {
+                    const isLast = idx === data.dots.length - 1;
+                    return `<circle cx="${pt[0]}" cy="${pt[1]}" r="${isLast ? 5 : 4.5}" fill="${isLast ? '#0284c7' : '#2563eb'}" stroke="#ffffff" stroke-width="${isLast ? 2.5 : 2}" class="cursor-pointer hover:r-7 transition-all" />`;
+                }).join('');
+            }
+        }
     </script>
+</body>
+</html>
 </body>
 </html>
