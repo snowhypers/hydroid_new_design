@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hydroid Smart Bottle</title>
+    <title>Hydroid Smart Bottle | Veids Ventures</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -13,17 +13,19 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['"DM Sans"', 'Inter', 'sans-serif'],
                     },
                     colors: {
                         brand: {
-                            navy: '#1a233a',    // Darker, premium header
-                            bg: '#f7f9fc',      // Ultra-light blue/grey app background
-                            accent: '#0c5757',  // Deep Teal from provided images
-                            blue: '#2563eb',    // Primary blue
+                            navy: '#143e34',    // Veids deep pine header (veids.in)
+                            bg: '#f8fbf6',      // Veids light mint paper canvas
+                            accent: '#205c4b',  // Veids official primary green (veids.in)
+                            mint: '#dcebd8',    // Veids signature pastel mint (veids.in)
+                            blue: '#205c4b',    // Themed to Veids green
+                            cyan: '#22d3ee',    // ActiveSense glowing ring cyan
                             red: '#ef4444',     // Warning red
-                            textMain: '#0f172a',
-                            textMuted: '#64748b'
+                            textMain: '#113e31',// Veids deep forest text (veids.in)
+                            textMuted: '#5a6b60'
                         }
                     },
                     boxShadow: {
@@ -47,7 +49,7 @@
     </script>
     <style>
         body {
-            background-color: #cbd5e1; /* Darker desktop bg to make app pop */
+            background-color: #ffffff; /* Clean white outer web background */
             color: #0f172a;
             -webkit-font-smoothing: antialiased;
         }
@@ -76,19 +78,19 @@
 </head>
 <body class="h-screen w-full flex justify-center items-center">
 
-    <div class="w-full max-w-[400px] h-full sm:h-[850px] sm:rounded-[40px] flex flex-col relative bg-brand-bg shadow-2xl overflow-hidden font-sans border-4 border-slate-400/20">
+    <div class="w-full max-w-[400px] h-full sm:h-[850px] sm:rounded-[40px] flex flex-col relative bg-brand-bg shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden font-sans border-4 border-slate-200">
         
-        <!-- Premium Header Section (Only visible on Home Tab) -->
-        <header id="app-header" class="bg-gradient-to-b from-brand-navy to-[#26314f] header-curve px-6 pt-12 pb-8 flex flex-col z-20 relative shadow-lg">
+        <!-- Light Green Theme Header Section (veids.in style) -->
+        <header id="app-header" class="bg-gradient-to-b from-[#e8f5e5] via-[#d6ebd3] to-[#c5e4c2] border-b border-[#badcb7] header-curve px-6 pt-12 pb-8 flex flex-col z-20 relative shadow-sm">
             <!-- Top row: Date & Notification -->
             <div class="flex justify-between items-center mb-6">
-                <div class="flex items-center gap-2 text-white/80 text-[13px] font-medium tracking-wide">
-                    <i class="fa-regular fa-calendar-days text-white/60"></i>
+                <div class="flex items-center gap-2 text-[#2d5646] text-[13px] font-bold tracking-wide">
+                    <i class="fa-regular fa-calendar-days text-[#205c4b]"></i>
                     <span id="current-date">Mon, 3 Aug 2026</span>
                 </div>
-                <button class="relative w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center text-white transition hover:bg-white/20 backdrop-blur-md">
+                <button class="relative w-10 h-10 rounded-2xl bg-white/80 border border-white flex items-center justify-center text-[#143e34] transition hover:bg-white shadow-sm">
                     <i class="fa-regular fa-bell text-lg"></i>
-                    <span class="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-brand-navy flex items-center justify-center"></span>
+                    <span class="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white flex items-center justify-center"></span>
                 </button>
             </div>
 
@@ -96,25 +98,25 @@
             <div class="flex items-center justify-between mb-5">
                 <div class="flex items-center gap-4">
                     <div class="relative">
-                        <img src="https://ui-avatars.com/api/?name=Pradip&background=random" alt="Profile" class="w-14 h-14 rounded-[20px] object-cover border-[3px] border-white/20 shadow-inner-light">
-                        <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 border-2 border-brand-navy rounded-full"></div>
+                        <img src="https://ui-avatars.com/api/?name=Pradip&background=random" alt="Profile" class="w-14 h-14 rounded-[20px] object-cover border-[3px] border-white shadow-md">
+                        <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full"></div>
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-white flex items-center gap-2 tracking-tight">
+                        <h1 class="text-xl font-black text-[#113e31] flex items-center gap-2 tracking-tight">
                             Hi, Pradip! <span class="animate-pulse-slow">👋</span>
                         </h1>
-                        <div class="flex items-center gap-3 mt-1">
-                            <span class="flex items-center gap-1 text-xs text-blue-400 font-bold bg-blue-400/10 px-2 py-0.5 rounded-md">
+                        <div class="flex items-center gap-2.5 mt-1">
+                            <span class="flex items-center gap-1 text-xs text-[#205c4b] font-black bg-white/80 border border-[#badcb7] px-2 py-0.5 rounded-md shadow-xs">
                                 <i class="fa-solid fa-plus text-[10px]"></i> 88%
                             </span>
-                            <span class="text-white/20 text-xs">•</span>
-                            <span class="flex items-center gap-1 text-xs text-amber-400 font-bold bg-amber-400/10 px-2 py-0.5 rounded-md">
+                            <span class="text-slate-400 text-xs">•</span>
+                            <span class="flex items-center gap-1 text-xs text-amber-700 font-extrabold bg-amber-100/80 border border-amber-200 px-2 py-0.5 rounded-md shadow-xs">
                                 <i class="fa-solid fa-star text-[10px]"></i> Pro
                             </span>
                         </div>
                     </div>
                 </div>
-                <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all">
+                <button class="w-8 h-8 rounded-full bg-white/70 border border-white flex items-center justify-center text-[#143e34] hover:bg-white transition-all shadow-xs">
                     <i class="fa-solid fa-chevron-right text-sm"></i>
                 </button>
             </div>
@@ -122,30 +124,26 @@
             <!-- Device Status Row (Scrollable & Responsive) -->
             <div class="flex items-center gap-2 mb-5 overflow-x-auto no-scrollbar pb-1 -mx-6 px-6">
                 <!-- Connected Hydroid Badge -->
-                <div class="flex items-center gap-1 bg-white/10 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-[10px] font-semibold whitespace-nowrap shadow-sm shrink-0">
-                    <div class="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_6px_rgba(74,222,128,0.8)] animate-pulse shrink-0"></div>
+                <div class="flex items-center gap-1.5 bg-white/85 backdrop-blur-md px-3 py-1.5 rounded-full text-[#143e34] text-[10.5px] font-extrabold whitespace-nowrap shadow-xs border border-white shrink-0">
+                    <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.8)] animate-pulse shrink-0"></div>
                     Hydroid Connected
                 </div>
                 <!-- Battery Indicator Badge -->
-                <div class="flex items-center gap-1 bg-white/10 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-[10px] font-semibold whitespace-nowrap shadow-sm shrink-0">
-                    <span class="w-3.5 h-3.5 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-battery-three-quarters text-green-400 text-xs"></i>
-                    </span>
+                <div class="flex items-center gap-1.5 bg-white/85 backdrop-blur-md px-3 py-1.5 rounded-full text-[#143e34] text-[10.5px] font-extrabold whitespace-nowrap shadow-xs border border-white shrink-0">
+                    <i class="fa-solid fa-battery-three-quarters text-emerald-600 text-xs"></i>
                     85%
                 </div>
                 <!-- UV Scan Active Badge -->
-                <div class="flex items-center gap-1 bg-[#0c5757]/40 border border-[#0c5757] px-2.5 py-1 rounded-full text-green-300 text-[10px] font-semibold whitespace-nowrap shadow-sm shrink-0">
-                    <span class="w-3.5 h-3.5 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-certificate text-green-400 animate-spin" style="animation-duration: 4s;"></i> 
-                    </span>
-                    UV-C
+                <div class="flex items-center gap-1.5 bg-[#205c4b] px-3 py-1.5 rounded-full text-white text-[10.5px] font-extrabold whitespace-nowrap shadow-sm shrink-0">
+                    <i class="fa-solid fa-certificate text-emerald-300 animate-spin" style="animation-duration: 4s;"></i> 
+                    UV-C Clean
                 </div>
             </div>
 
             <!-- Search / Status Bar -->
-            <div class="bg-white/10 backdrop-blur-md rounded-2xl px-4 py-3.5 flex items-center gap-3 border border-white/10 shadow-inner">
-                <i class="fa-solid fa-magnifying-glass text-white/50 text-sm"></i>
-                <input type="text" placeholder="Search AskHydroid..." readonly class="bg-transparent border-none outline-none text-sm text-white w-full placeholder-white/50 cursor-pointer font-medium">
+            <div class="bg-white/90 backdrop-blur-md rounded-2xl px-4 py-3 flex items-center gap-3 border border-white shadow-sm">
+                <i class="fa-solid fa-magnifying-glass text-[#205c4b] text-sm"></i>
+                <input type="text" placeholder="Search AskHydroid..." readonly class="bg-transparent border-none outline-none text-sm text-[#113e31] w-full placeholder-[#5a6b60] cursor-pointer font-bold">
             </div>
         </header>
 
@@ -156,8 +154,8 @@
                 <!-- Contextual Smart Alerts -->
                 <section class="space-y-3">
                     <!-- Goal Achievement Card -->
-                    <div class="bg-[#fdf9f1] rounded-[24px] p-4 flex items-center gap-4 shadow-soft border border-amber-100/50 hover:scale-[1.02] transition-transform cursor-pointer">
-                        <div class="w-12 h-12 rounded-[18px] bg-white flex items-center justify-center shadow-sm flex-shrink-0 text-amber-500">
+                    <div class="bg-[#edf8ec] rounded-[24px] p-4 flex items-center gap-4 shadow-soft border border-[#cfe6cb] hover:scale-[1.02] transition-transform cursor-pointer">
+                        <div class="w-12 h-12 rounded-[18px] bg-white flex items-center justify-center shadow-sm flex-shrink-0 text-[#205c4b]">
                             <i class="fa-solid fa-trophy text-xl"></i>
                         </div>
                         <p class="text-[14px] font-bold text-brand-textMain leading-snug pr-2">
@@ -169,52 +167,57 @@
                 <section class="delay-100">
                     <div class="flex justify-between items-center mb-4 px-1">
                         <h2 class="text-[16px] font-bold text-brand-textMain tracking-tight">Smart Water Metrics</h2>
-                        <a href="#" class="text-[13px] font-bold text-blue-600 hover:text-blue-700">See All</a>
+                        <a href="#" class="text-[13px] font-bold text-brand-accent hover:text-[#143e34]">See All</a>
                     </div>
 
                     <div class="grid grid-cols-2 gap-4">
-                        <!-- TDS Card -->
-                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-[28px] p-5 text-white shadow-[0_12px_24px_-8px_rgba(37,99,235,0.4)] relative overflow-hidden flex flex-col h-44 hover:-translate-y-1 transition-transform">
-                            <div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+                        <!-- TDS Card (Veids Light Mint Card) -->
+                        <div class="bg-gradient-to-br from-[#e8f6e5] via-[#d4ebd0] to-[#bfe2bc] rounded-[28px] p-5 text-[#113e31] border border-[#c4e3c0] shadow-[0_12px_28px_-8px_rgba(32,92,75,0.18)] relative overflow-hidden flex flex-col h-44 hover:-translate-y-1 transition-transform">
+                            <div class="absolute -right-4 -top-4 w-24 h-24 bg-white/40 rounded-full blur-2xl"></div>
                             <div class="flex justify-between items-start mb-auto relative z-10">
-                                <span class="text-[13px] font-bold tracking-wide">TDS Level</span>
-                                <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                                    <i class="fa-solid fa-droplet text-white text-[10px]"></i>
+                                <span class="text-[13px] font-black tracking-wide text-[#143e34]">TDS Level</span>
+                                <div class="w-6 h-6 rounded-full bg-[#205c4b] text-white flex items-center justify-center shadow-xs">
+                                    <i class="fa-solid fa-droplet text-[10px]"></i>
                                 </div>
                             </div>
                             
                             <!-- Visual Chart Mockup -->
-                            <div class="h-10 w-full flex items-end gap-1.5 mb-3 opacity-90 relative z-10">
-                                <div class="w-1/5 bg-white/30 h-1/3 rounded-sm"></div>
-                                <div class="w-1/5 bg-white/50 h-2/3 rounded-sm"></div>
-                                <div class="w-1/5 bg-white/40 h-1/2 rounded-sm"></div>
-                                <div class="w-1/5 bg-white h-full rounded-sm shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
-                                <div class="w-1/5 bg-white/60 h-3/4 rounded-sm"></div>
+                            <div class="h-10 w-full flex items-end gap-1.5 mb-3 relative z-10">
+                                <div class="w-1/5 bg-[#205c4b]/20 h-1/3 rounded-sm"></div>
+                                <div class="w-1/5 bg-[#205c4b]/35 h-2/3 rounded-sm"></div>
+                                <div class="w-1/5 bg-[#205c4b]/25 h-1/2 rounded-sm"></div>
+                                <div class="w-1/5 bg-[#205c4b] h-full rounded-sm shadow-[0_0_8px_rgba(32,92,75,0.4)]"></div>
+                                <div class="w-1/5 bg-[#205c4b]/40 h-3/4 rounded-sm"></div>
                             </div>
 
-                            <div class="flex items-baseline gap-1 mt-auto relative z-10">
-                                <span class="text-[32px] font-black tracking-tighter leading-none">148</span>
-                                <span class="text-[11px] font-bold opacity-80 uppercase tracking-wider">ppm</span>
+                            <div class="flex items-baseline justify-between mt-auto relative z-10">
+                                <div class="flex items-baseline gap-1">
+                                    <span class="text-[32px] font-black tracking-tighter leading-none text-[#113e31]">148</span>
+                                    <span class="text-[11px] font-extrabold text-[#205c4b] uppercase tracking-wider">ppm</span>
+                                </div>
+                                <span class="text-[9.5px] font-extrabold bg-white/80 text-[#205c4b] border border-[#bfe1ba] px-2 py-0.5 rounded-md">
+                                    OPTIMAL
+                                </span>
                             </div>
                         </div>
 
-                        <!-- Temp Card -->
-                        <div class="bg-gradient-to-br from-rose-400 to-red-500 rounded-[28px] p-5 text-white shadow-[0_12px_24px_-8px_rgba(239,68,68,0.4)] relative overflow-hidden flex flex-col h-44 hover:-translate-y-1 transition-transform">
-                            <div class="absolute -left-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+                        <!-- Temp Card (Soft Peach Warmth) -->
+                        <div class="bg-gradient-to-br from-[#fcf5f1] via-[#faeae3] to-[#f6dfd6] rounded-[28px] p-5 text-[#7f2d1e] border border-[#f3d3c8] shadow-[0_12px_28px_-8px_rgba(200,80,60,0.12)] relative overflow-hidden flex flex-col h-44 hover:-translate-y-1 transition-transform">
+                            <div class="absolute -left-4 -bottom-4 w-24 h-24 bg-white/50 rounded-full blur-2xl"></div>
                             <div class="flex justify-between items-start mb-auto relative z-10">
-                                <span class="text-[13px] font-bold tracking-wide">Temp</span>
-                                <div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                                    <i class="fa-solid fa-temperature-half text-white text-[10px]"></i>
+                                <span class="text-[13px] font-black tracking-wide text-[#7f2d1e]">Temp</span>
+                                <div class="w-6 h-6 rounded-full bg-[#e05338] text-white flex items-center justify-center shadow-xs">
+                                    <i class="fa-solid fa-temperature-half text-[10px]"></i>
                                 </div>
                             </div>
                             
-                            <div class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl px-2 py-2.5 mt-4 mb-4 text-center relative z-10">
-                                <span class="text-[10px] font-bold tracking-widest uppercase">NORMAL</span>
+                            <div class="bg-white/80 backdrop-blur-sm border border-white rounded-xl px-2 py-2 mt-3 mb-3 text-center relative z-10 shadow-xs">
+                                <span class="text-[9.5px] font-black tracking-widest text-[#a33824] uppercase">NORMAL</span>
                             </div>
 
                             <div class="flex items-baseline gap-1 mt-auto relative z-10">
-                                <span class="text-[32px] font-black tracking-tighter leading-none">19</span>
-                                <span class="text-[11px] font-bold opacity-80 uppercase tracking-wider">°C</span>
+                                <span class="text-[32px] font-black tracking-tighter leading-none text-[#7f2d1e]">19</span>
+                                <span class="text-[11px] font-bold text-[#a33824] uppercase tracking-wider">°C</span>
                             </div>
                         </div>
                     </div>
@@ -229,7 +232,7 @@
                     <div class="flex justify-between items-start px-2">
                         <!-- Safety UV-C -->
                         <div class="flex flex-col items-center gap-2 cursor-pointer group w-[92px]">
-                            <div class="relative w-[66px] h-[66px] rounded-[24px] bg-gradient-to-br from-[#0c5757] via-[#0f766e] to-[#14b8a6] flex items-center justify-center text-white shadow-[0_14px_26px_-10px_rgba(12,87,87,0.55)] transition-transform group-hover:scale-105 group-active:scale-95 overflow-hidden">
+                            <div class="relative w-[66px] h-[66px] rounded-[24px] bg-gradient-to-br from-[#143e34] via-[#1b5042] to-[#205c4b] flex items-center justify-center text-white shadow-[0_14px_26px_-10px_rgba(32,92,75,0.55)] transition-transform group-hover:scale-105 group-active:scale-95 overflow-hidden">
                                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_32%)]"></div>
                                 <div class="absolute -right-2 -bottom-3 w-10 h-10 rounded-full bg-white/10"></div>
                                 <i class="fa-solid fa-shield-halved text-[25px] relative z-10 drop-shadow-sm"></i>
@@ -245,7 +248,7 @@
 
                         <!-- AI Coach -->
                         <div onclick="openCoach()" class="flex flex-col items-center gap-2.5 cursor-pointer group">
-                            <div class="w-[60px] h-[60px] rounded-[22px] bg-[#eef2f6] flex items-center justify-center text-brand-accent transition-transform group-hover:scale-105 group-hover:bg-[#e2e8f0]">
+                            <div class="w-[60px] h-[60px] rounded-[22px] bg-[#edf6ec] flex items-center justify-center text-brand-accent transition-transform group-hover:scale-105 group-hover:bg-[#dcebd8]">
                                 <i class="fa-regular fa-comments text-[22px]"></i>
                             </div>
                             <span class="text-[12px] font-bold text-slate-700">AI Coach</span>
@@ -253,7 +256,7 @@
 
                         <!-- Analytics -->
                         <div onclick="switchTab('history')" class="flex flex-col items-center gap-2.5 cursor-pointer group">
-                            <div class="w-[60px] h-[60px] rounded-[22px] bg-[#eef2f6] flex items-center justify-center text-brand-accent transition-transform group-hover:scale-105 group-hover:bg-[#e2e8f0]">
+                            <div class="w-[60px] h-[60px] rounded-[22px] bg-[#edf6ec] flex items-center justify-center text-brand-accent transition-transform group-hover:scale-105 group-hover:bg-[#dcebd8]">
                                 <i class="fa-solid fa-chart-column text-[22px]"></i>
                             </div>
                             <span class="text-[12px] font-bold text-slate-700">Analytics</span>
@@ -276,7 +279,7 @@
                             <div class="flex-1">
                                 <h3 class="text-[14px] font-bold text-brand-textMain mb-2">Water Remaining</h3>
                                 <div class="w-full bg-slate-100 rounded-full h-2 mb-1.5 overflow-hidden">
-                                    <div class="bg-blue-500 h-full rounded-full relative" style="width: 45%">
+                                    <div class="bg-gradient-to-r from-brand-accent to-emerald-400 h-full rounded-full relative" style="width: 45%">
                                         <div class="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-r from-transparent to-white/30"></div>
                                     </div>
                                 </div>
@@ -295,9 +298,9 @@
                             <div class="flex-1">
                                 <h3 class="text-[14px] font-bold text-brand-textMain mb-2">Mineral Nutrition</h3>
                                 <div class="flex gap-2">
-                                    <span class="bg-teal-50 text-brand-accent text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide border border-teal-100">Magnesium</span>
-                                    <span class="bg-teal-50 text-brand-accent text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide border border-teal-100">Calcium</span>
-                                    <span class="bg-blue-50 text-blue-600 text-[10px] px-2.5 py-1 rounded-md font-bold border border-blue-100">+2</span>
+                                    <span class="bg-emerald-50 text-brand-accent text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide border border-emerald-100">Magnesium</span>
+                                    <span class="bg-emerald-50 text-brand-accent text-[10px] px-2.5 py-1 rounded-md font-bold uppercase tracking-wide border border-emerald-100">Calcium</span>
+                                    <span class="bg-emerald-50 text-brand-accent text-[10px] px-2.5 py-1 rounded-md font-bold border border-emerald-100">+2</span>
                                 </div>
                             </div>
                         </div>
@@ -351,33 +354,33 @@
                         </div>
                     </div>
 
-                    <div class="bg-brand-navy rounded-[32px] p-5 text-white relative overflow-hidden shadow-lg">
-                        <div class="absolute -right-12 -top-12 w-44 h-44 bg-blue-500/20 rounded-full blur-3xl"></div>
-                        <div class="absolute right-3 bottom-2 opacity-15">
-                            <i class="fa-solid fa-robot text-[118px] text-white"></i>
+                    <div class="bg-gradient-to-br from-[#e8f5e6] via-[#dcf0da] to-[#cde9cb] rounded-[32px] p-5 text-[#113e31] border border-[#c6e6c4] relative overflow-hidden shadow-sm">
+                        <div class="absolute -right-12 -top-12 w-44 h-44 bg-white/40 rounded-full blur-3xl"></div>
+                        <div class="absolute right-3 bottom-2 opacity-10">
+                            <i class="fa-solid fa-robot text-[118px] text-[#143e34]"></i>
                         </div>
 
                         <div class="relative z-10 flex items-center justify-between mb-4">
                             <div>
-                                <p class="text-[10px] font-extrabold text-blue-300 uppercase tracking-widest">Subscriptions</p>
-                                <h3 class="text-[18px] font-black tracking-tight mt-0.5">Choose your AI plan</h3>
+                                <p class="text-[10px] font-black text-[#205c4b] uppercase tracking-widest">Subscriptions</p>
+                                <h3 class="text-[18px] font-black text-[#113e31] tracking-tight mt-0.5">Choose your AI plan</h3>
                             </div>
-                            <span class="bg-white/10 border border-white/10 text-cyan-200 text-[10px] font-extrabold px-2.5 py-1 rounded-full">1,922 chats</span>
+                            <span class="bg-white/80 border border-white text-[#205c4b] text-[10px] font-black px-2.5 py-1 rounded-full shadow-xs">1,922 chats</span>
                         </div>
 
                         <div class="relative z-10 grid grid-cols-3 gap-2.5">
                             <!-- Basic Plan -->
-                            <div class="bg-white/10 border border-white/10 rounded-[20px] p-3 min-h-[126px] flex flex-col">
-                                <span class="text-[10px] font-black text-white uppercase tracking-wide mb-2">Basic</span>
+                            <div class="bg-white/70 border border-white rounded-[20px] p-3 min-h-[126px] flex flex-col text-[#113e31] shadow-xs">
+                                <span class="text-[10px] font-black text-[#143e34] uppercase tracking-wide mb-2">Basic</span>
                                 <div class="mb-2">
                                     <span class="text-[18px] font-black leading-none">Free</span>
                                 </div>
-                                <p class="text-[10.5px] text-slate-300 font-semibold leading-snug">Daily tips<br>Basic coach</p>
+                                <p class="text-[10.5px] text-[#355f50] font-bold leading-snug">Daily tips<br>Basic coach</p>
                                 <span class="mt-auto text-[9px] font-extrabold text-emerald-300 bg-emerald-400/10 border border-emerald-400/20 rounded-full px-2 py-1 text-center">Active</span>
                             </div>
 
                             <!-- Pro Plan -->
-                            <div class="bg-blue-600 rounded-[20px] p-3 min-h-[126px] flex flex-col shadow-[0_14px_24px_-12px_rgba(37,99,235,0.85)] relative overflow-hidden">
+                            <div class="bg-brand-accent rounded-[20px] p-3 min-h-[126px] flex flex-col shadow-[0_14px_24px_-12px_rgba(32,92,75,0.85)] relative overflow-hidden">
                                 <div class="absolute -right-4 -top-4 w-14 h-14 rounded-full bg-white/15"></div>
                                 <span class="relative text-[10px] font-black text-white uppercase tracking-wide mb-2">Pro</span>
                                 <div class="relative mb-2">
@@ -385,7 +388,7 @@
                                     <span class="text-[9px] font-bold text-blue-100">/mo</span>
                                 </div>
                                 <p class="relative text-[10.5px] text-blue-50 font-semibold leading-snug">Smart goals<br>Deep insights</p>
-                                <button class="relative mt-auto bg-white text-blue-700 rounded-full px-2 py-1 text-[9px] font-black">Upgrade</button>
+                                <button class="relative mt-auto bg-white text-brand-accent rounded-full px-2 py-1 text-[9px] font-black">Upgrade</button>
                             </div>
 
                             <!-- Pro+ Plan -->
@@ -417,7 +420,7 @@
                         
                         <!-- Metric Selector Tabs -->
                         <div class="flex justify-around items-center pt-1 border-b border-slate-100 pb-3">
-                            <button onclick="setMetricTab('tds')" id="btn-metric-tds" class="px-5 py-1.5 rounded-xl border-2 border-blue-500 text-blue-600 font-bold text-xs bg-blue-50/40 transition-all shadow-sm">
+                            <button onclick="setMetricTab('tds')" id="btn-metric-tds" class="px-5 py-1.5 rounded-xl border-2 border-brand-accent text-brand-accent font-bold text-xs bg-emerald-50/50 transition-all shadow-sm">
                                 TDS
                             </button>
                             <button onclick="setMetricTab('water')" id="btn-metric-water" class="px-5 py-1.5 rounded-xl border-2 border-transparent text-slate-500 font-bold text-xs hover:text-slate-800 transition-all">
@@ -433,7 +436,7 @@
                             <button onclick="setTimeframeTab('weekly')" id="btn-time-weekly" class="flex-1 py-1.5 rounded-xl text-slate-500 font-bold text-xs transition-all text-center">
                                 Weekly
                             </button>
-                            <button onclick="setTimeframeTab('monthly')" id="btn-time-monthly" class="flex-1 py-1.5 rounded-xl bg-blue-600 text-white font-bold text-xs transition-all shadow-sm text-center">
+                            <button onclick="setTimeframeTab('monthly')" id="btn-time-monthly" class="flex-1 py-1.5 rounded-xl bg-brand-accent text-white font-bold text-xs transition-all shadow-sm text-center">
                                 Monthly
                             </button>
                             <button onclick="setTimeframeTab('yearly')" id="btn-time-yearly" class="flex-1 py-1.5 rounded-xl text-slate-500 font-bold text-xs transition-all text-center">
@@ -445,7 +448,7 @@
                         <div class="pt-2 px-1">
                             <!-- Chart Header Legend -->
                             <div class="flex justify-center items-center gap-2 mb-3">
-                                <span class="w-3 h-3 rounded-full bg-blue-500 inline-block shadow-sm"></span>
+                                <span class="w-3 h-3 rounded-full bg-brand-accent inline-block shadow-sm"></span>
                                 <span id="chart-legend-text" class="text-xs font-bold text-slate-600">Average TDS</span>
                             </div>
 
@@ -480,8 +483,8 @@
                                     <svg viewBox="0 0 300 120" preserveAspectRatio="none" class="w-full h-full overflow-visible">
                                         <defs>
                                             <linearGradient id="blueAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
-                                                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05"/>
+                                                <stop offset="0%" stop-color="#205c4b" stop-opacity="0.4"/>
+                                                <stop offset="100%" stop-color="#205c4b" stop-opacity="0.05"/>
                                             </linearGradient>
                                         </defs>
 
@@ -492,14 +495,14 @@
                                         <path id="svg-area" d="M 10 48 L 90 48 L 170 48 L 270 12 L 270 110 L 10 110 Z" fill="url(#blueAreaGrad)" class="transition-all duration-500" />
                                         
                                         <!-- Main Curve Line -->
-                                        <path id="svg-line" d="M 10 48 C 60 48, 120 48, 170 48 C 220 48, 240 18, 270 12" fill="none" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round" class="transition-all duration-500" />
+                                        <path id="svg-line" d="M 10 48 C 60 48, 120 48, 170 48 C 220 48, 240 18, 270 12" fill="none" stroke="#205c4b" stroke-width="3.5" stroke-linecap="round" class="transition-all duration-500" />
 
                                         <!-- Data Circles -->
                                         <g id="svg-dots">
-                                            <circle cx="10" cy="48" r="4.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" class="cursor-pointer hover:r-6 transition-all" />
-                                            <circle cx="90" cy="48" r="4.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" class="cursor-pointer hover:r-6 transition-all" />
-                                            <circle cx="170" cy="48" r="4.5" fill="#2563eb" stroke="#ffffff" stroke-width="2" class="cursor-pointer hover:r-6 transition-all" />
-                                            <circle cx="270" cy="12" r="5" fill="#0284c7" stroke="#ffffff" stroke-width="2.5" class="cursor-pointer hover:r-7 transition-all shadow-md" />
+                                            <circle cx="10" cy="48" r="4.5" fill="#205c4b" stroke="#ffffff" stroke-width="2" class="cursor-pointer hover:r-6 transition-all" />
+                                            <circle cx="90" cy="48" r="4.5" fill="#205c4b" stroke="#ffffff" stroke-width="2" class="cursor-pointer hover:r-6 transition-all" />
+                                            <circle cx="170" cy="48" r="4.5" fill="#205c4b" stroke="#ffffff" stroke-width="2" class="cursor-pointer hover:r-6 transition-all" />
+                                            <circle cx="270" cy="12" r="5" fill="#143e34" stroke="#ffffff" stroke-width="2.5" class="cursor-pointer hover:r-7 transition-all shadow-md" />
                                         </g>
                                     </svg>
                                 </div>
@@ -737,10 +740,10 @@
                 </div>
 
                 <!-- Brand Footer & Link -->
-                <div class="bg-slate-900 rounded-[28px] p-5 text-white shadow-soft text-center space-y-2 mt-4 border border-slate-800">
-                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Official Innovation</p>
-                    <h4 class="text-sm font-extrabold text-slate-100">Product by Veids Ventures pvt. ltd.</h4>
-                    <a href="https://www.veids.in" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors pt-1">
+                <div class="bg-gradient-to-br from-[#e8f5e6] via-[#dcf0da] to-[#cde9cb] rounded-[28px] p-5 text-[#113e31] shadow-soft text-center space-y-2 mt-4 border border-[#c6e6c4]">
+                    <p class="text-[11px] font-black text-[#205c4b] uppercase tracking-widest">Official Innovation</p>
+                    <h4 class="text-sm font-black text-[#113e31]">Product by Veids Ventures pvt. ltd.</h4>
+                    <a href="https://www.veids.in" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#205c4b] hover:text-[#143e34] transition-colors pt-1">
                         <span>Reach out: www.veids.in</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                     </a>
@@ -885,7 +888,7 @@
         <!-- Floating Bottom Navigation -->
         <div class="absolute bottom-6 w-full flex justify-center px-5 z-50 pointer-events-none">
             <!-- White rounded pill navigation container -->
-            <div class="w-full glass-panel rounded-[36px] shadow-[0_20px_40px_rgba(0,0,0,0.1)] h-[80px] relative flex justify-between items-center px-7 pointer-events-auto border border-white/60">
+            <div class="w-full rounded-[36px] bg-white/92 backdrop-blur-md shadow-[0_16px_36px_rgba(32,92,75,0.12)] h-[80px] relative flex justify-between items-center px-7 pointer-events-auto border border-[#d6ebd2]">
                 
                 <!-- Home (Active by default) -->
                 <button onclick="switchTab('home')" id="nav-btn-home" class="nav-item flex flex-col items-center justify-center gap-1.5 w-12 relative group text-brand-accent">
@@ -902,7 +905,7 @@
 
                 <!-- Center Push Button — Compact & Sleek Phone App UI Button -->
                 <div class="relative -top-5">
-                    <button onclick="openAnalysisModal()" class="relative w-[62px] h-[62px] bg-gradient-to-br from-brand-accent via-[#0f766e] to-[#14b8a6] rounded-full text-white flex flex-col items-center justify-center shadow-[0_12px_28px_-6px_rgba(12,87,87,0.45)] hover:scale-105 transition-all active:scale-95 border-[5px] border-brand-bg group cursor-pointer" title="Push to Start Analysis Pipeline">
+                    <button onclick="openAnalysisModal()" class="relative w-[62px] h-[62px] bg-gradient-to-br from-[#143e34] via-[#1b5042] to-[#205c4b] rounded-full text-white flex flex-col items-center justify-center shadow-[0_12px_28px_-6px_rgba(32,92,75,0.45)] hover:scale-105 transition-all active:scale-95 border-[5px] border-[#f8fbf6] group cursor-pointer" title="Push to Start Analysis Pipeline">
                         <!-- LED Light Ring / Dot on Push Button -->
                         <div id="btn-led-light" class="absolute -top-1 w-3 h-3 rounded-full bg-cyan-400 border-2 border-brand-navy shadow-[0_0_10px_#22d3ee] animate-pulse transition-all duration-300"></div>
                         
@@ -932,24 +935,24 @@
         <div class="absolute bottom-0 w-full h-36 bg-gradient-to-t from-brand-bg via-brand-bg/80 to-transparent pointer-events-none z-40"></div>
 
         <!-- ====== HYDROID COACH CHAT MODAL ====== -->
-        <div id="coach-modal" class="absolute inset-0 z-[100] flex flex-col hidden" style="background:rgba(15,24,40,0.55); backdrop-filter:blur(6px);">
+        <div id="coach-modal" class="absolute inset-0 z-[100] flex flex-col hidden" style="background:rgba(20,62,52,0.45); backdrop-filter:blur(6px);">
             <!-- Modal Panel -->
-            <div class="absolute bottom-0 left-0 right-0 bg-[#f7f9fc] rounded-t-[36px] shadow-2xl flex flex-col overflow-hidden" style="height:88%;">
+            <div class="absolute bottom-0 left-0 right-0 bg-[#f8fbf6] rounded-t-[36px] shadow-2xl flex flex-col overflow-hidden" style="height:88%;">
 
-                <!-- Header -->
-                <div class="bg-gradient-to-r from-brand-navy to-[#1a3a4a] px-5 pt-5 pb-4 flex items-center justify-between shrink-0">
+                <!-- Light Green Header -->
+                <div class="bg-gradient-to-r from-[#e8f5e5] via-[#d6ebd3] to-[#c5e4c2] border-b border-[#badcb7] px-5 pt-5 pb-4 flex items-center justify-between shrink-0 shadow-xs">
                     <div class="flex items-center gap-3">
                         <!-- Mini robot avatar -->
-                        <div class="w-10 h-10 rounded-2xl bg-brand-accent flex items-center justify-center shadow-md">
+                        <div class="w-10 h-10 rounded-2xl bg-[#205c4b] flex items-center justify-center shadow-sm">
                             <svg width="22" height="22" viewBox="0 0 36 36" fill="none">
                                 <rect x="6" y="10" width="24" height="20" rx="5" fill="white" fill-opacity="0.95"/>
                                 <rect x="17" y="4" width="2" height="6" rx="1" fill="white" fill-opacity="0.8"/>
                                 <circle cx="18" cy="4" r="2.5" fill="white"/>
-                                <rect x="10" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
-                                <rect x="21" y="16" width="5" height="5" rx="1.5" fill="#0c5757"/>
+                                <rect x="10" y="16" width="5" height="5" rx="1.5" fill="#205c4b"/>
+                                <rect x="21" y="16" width="5" height="5" rx="1.5" fill="#205c4b"/>
                                 <rect x="12" y="17" width="1.5" height="1.5" rx="0.5" fill="white" fill-opacity="0.7"/>
                                 <rect x="23" y="17" width="1.5" height="1.5" rx="0.5" fill="white" fill-opacity="0.7"/>
-                                <rect x="11" y="24" width="14" height="3" rx="1.5" fill="#0c5757" fill-opacity="0.6"/>
+                                <rect x="11" y="24" width="14" height="3" rx="1.5" fill="#205c4b" fill-opacity="0.6"/>
                                 <rect x="14.5" y="24" width="1" height="3" fill="white" fill-opacity="0.4"/>
                                 <rect x="18" y="24" width="1" height="3" fill="white" fill-opacity="0.4"/>
                                 <rect x="3" y="16" width="3" height="6" rx="1.5" fill="white" fill-opacity="0.6"/>
@@ -957,14 +960,14 @@
                             </svg>
                         </div>
                         <div>
-                            <h2 class="text-white font-black text-[16px] tracking-tight">Hydroid Coach</h2>
-                            <p class="text-emerald-400 text-[11px] font-bold flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+                            <h2 class="text-[#113e31] font-black text-[16px] tracking-tight">Hydroid Coach</h2>
+                            <p class="text-[#205c4b] text-[11px] font-bold flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
                                 AI · Always here for you
                             </p>
                         </div>
                     </div>
-                    <button onclick="closeCoach()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <button onclick="closeCoach()" class="w-9 h-9 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-[#143e34] border border-white shadow-xs transition">
                         <i class="fa-solid fa-xmark text-base"></i>
                     </button>
                 </div>
@@ -996,9 +999,9 @@
                 </div>
 
                 <!-- Input Row -->
-                <div class="px-4 pb-6 pt-2 flex items-center gap-3 shrink-0 bg-[#f7f9fc] border-t border-slate-100">
+                <div class="px-4 pb-6 pt-2 flex items-center gap-3 shrink-0 bg-[#f8fbf6] border-t border-[#dcebd8]">
                     <input id="coach-input" type="text" placeholder="Ask your Hydroid Coach..."
-                        class="flex-1 bg-white border border-slate-200 rounded-2xl px-4 py-3 text-[13px] font-semibold text-slate-800 placeholder-slate-400 outline-none focus:border-brand-accent shadow-sm"
+                        class="flex-1 bg-white border border-[#dcebd8] rounded-2xl px-4 py-3 text-[13px] font-semibold text-[#113e31] placeholder-slate-400 outline-none focus:border-brand-accent shadow-sm"
                         onkeydown="if(event.key==='Enter') sendMessage()" />
                     <button onclick="sendMessage()" class="w-11 h-11 bg-brand-accent rounded-2xl flex items-center justify-center shrink-0 hover:scale-105 transition-transform active:scale-95 shadow-md">
                         <i class="fa-solid fa-paper-plane text-white text-sm"></i>
@@ -1012,7 +1015,7 @@
         <!-- Floating AI Coach Side Support Widget (Lighter Circular Button) -->
         <button onclick="openCoach()" id="side-ai-coach-btn" class="absolute bottom-28 right-4 z-40 w-[56px] h-[56px] bg-white/95 border-2 border-brand-accent/30 hover:border-brand-accent rounded-full shadow-[0_10px_25px_rgba(12,87,87,0.22)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 group backdrop-blur-md cursor-pointer" title="AI Coach Support">
             <!-- Inner Robot Icon Container -->
-            <div class="w-10 h-10 rounded-full bg-teal-50 border border-teal-100 flex items-center justify-center group-hover:bg-brand-accent transition-colors duration-300 relative">
+            <div class="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center group-hover:bg-brand-accent transition-colors duration-300 relative">
                 <!-- Robot SVG -->
                 <svg width="22" height="22" viewBox="0 0 36 36" fill="none">
                     <rect x="6" y="10" width="24" height="20" rx="5" class="fill-[#0c5757] group-hover:fill-white transition-colors"/>
@@ -1031,28 +1034,28 @@
         </button>
 
         <!-- ====== ANALYSIS PROGRESS ANIMATION MODAL (LIGHT THEME) ====== -->
-        <div id="analysis-modal" class="absolute inset-0 z-[110] flex flex-col hidden" style="background:rgba(15,24,40,0.5); backdrop-filter:blur(8px);">
+        <div id="analysis-modal" class="absolute inset-0 z-[110] flex flex-col hidden" style="background:rgba(20,62,52,0.45); backdrop-filter:blur(8px);">
             <!-- Modal Panel (Lighter UI) -->
-            <div class="absolute bottom-0 left-0 right-0 bg-[#f8fafc] rounded-t-[36px] shadow-2xl flex flex-col overflow-hidden text-slate-900 border-t border-slate-200/80" style="height:90%;">
+            <div class="absolute bottom-0 left-0 right-0 bg-[#f8fbf6] rounded-t-[36px] shadow-2xl flex flex-col overflow-hidden text-slate-900 border-t border-[#dcebd8]" style="height:90%;">
                 
-                <!-- Modal Header with Main LED Light Bar -->
-                <div class="bg-gradient-to-r from-brand-navy via-[#1e293b] to-brand-navy px-6 pt-5 pb-4 flex items-center justify-between shadow-md shrink-0">
+                <!-- Light Green Modal Header with Main LED Light Bar -->
+                <div class="bg-gradient-to-r from-[#e8f5e5] via-[#d6ebd3] to-[#c5e4c2] border-b border-[#badcb7] px-6 pt-5 pb-4 flex items-center justify-between shadow-xs shrink-0">
                     <div class="flex items-center gap-3">
                         <!-- LED Light Indicator Module -->
                         <div class="relative flex items-center justify-center">
-                            <div id="modal-led-glow" class="w-10 h-10 rounded-2xl bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center shadow-[0_0_15px_rgba(34,211,238,0.5)] transition-all duration-500">
+                            <div id="modal-led-glow" class="w-10 h-10 rounded-2xl bg-white/80 border border-cyan-400/50 flex items-center justify-center shadow-[0_0_15px_rgba(34,211,238,0.5)] transition-all duration-500">
                                 <div id="modal-led-bulb" class="w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_12px_#22d3ee] animate-pulse"></div>
                             </div>
                         </div>
                         <div>
-                            <h2 class="text-white font-black text-[16px] tracking-tight flex items-center gap-2">
+                            <h2 class="text-[#113e31] font-black text-[16px] tracking-tight flex items-center gap-2">
                                 Analysis Pipeline
-                                <span id="pipeline-status-badge" class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">SCANNING</span>
+                                <span id="pipeline-status-badge" class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#205c4b]/15 text-[#205c4b] border border-[#205c4b]/30">SCANNING</span>
                             </h2>
-                            <p id="pipeline-status-subtitle" class="text-slate-300 text-[11px] font-semibold">Live operation flow & sensor metrics</p>
+                            <p id="pipeline-status-subtitle" class="text-[#355f50] text-[11px] font-bold">Live operation flow & sensor metrics</p>
                         </div>
                     </div>
-                    <button onclick="closeAnalysisModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                    <button onclick="closeAnalysisModal()" class="w-9 h-9 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-[#143e34] border border-white shadow-xs transition">
                         <i class="fa-solid fa-xmark text-base"></i>
                     </button>
                 </div>
@@ -1180,7 +1183,7 @@
                     <div class="grid grid-cols-3 gap-2.5 pt-1">
                         <div class="bg-white border border-slate-200/80 p-3 rounded-2xl text-center shadow-soft">
                             <span class="text-[10px] font-extrabold text-slate-400 uppercase block">TDS Output</span>
-                            <span id="telemetry-tds" class="text-[16px] font-black text-blue-600">-- ppm</span>
+                            <span id="telemetry-tds" class="text-[16px] font-black text-brand-accent">-- ppm</span>
                         </div>
                         <div class="bg-white border border-slate-200/80 p-3 rounded-2xl text-center shadow-soft">
                             <span class="text-[10px] font-extrabold text-slate-400 uppercase block">Temp</span>
@@ -1188,7 +1191,7 @@
                         </div>
                         <div class="bg-white border border-slate-200/80 p-3 rounded-2xl text-center shadow-soft">
                             <span class="text-[10px] font-extrabold text-slate-400 uppercase block">Dosage</span>
-                            <span id="telemetry-dose" class="text-[16px] font-black text-amber-500">-- ml</span>
+                            <span id="telemetry-dose" class="text-[16px] font-black text-[#205c4b]">-- ml</span>
                         </div>
                     </div>
 
@@ -1196,7 +1199,7 @@
 
                 <!-- Modal Controls Footer -->
                 <div class="px-5 py-4 bg-white border-t border-slate-200/80 flex items-center gap-3 shrink-0 shadow-lg">
-                    <button id="btn-rerun-pipeline" onclick="runPipelineSequence()" class="flex-1 bg-gradient-to-r from-brand-accent via-[#0f766e] to-[#14b8a6] hover:brightness-110 text-white font-extrabold py-3.5 px-4 rounded-2xl text-[13px] shadow-md active:scale-95 transition-all flex items-center justify-center gap-2">
+                    <button id="btn-rerun-pipeline" onclick="runPipelineSequence()" class="flex-1 bg-gradient-to-r from-brand-accent via-[#1b5042] to-[#10b981] hover:brightness-110 text-white font-extrabold py-3.5 px-4 rounded-2xl text-[13px] shadow-md active:scale-95 transition-all flex items-center justify-center gap-2">
                         <i class="fa-solid fa-play text-xs"></i>
                         <span>Start Pipeline</span>
                     </button>
@@ -1426,7 +1429,7 @@
                 const btn = document.getElementById(`btn-metric-${m}`);
                 if (btn) {
                     if (m === metric) {
-                        btn.className = "px-5 py-1.5 rounded-xl border-2 border-blue-500 text-blue-600 font-bold text-xs bg-blue-50/40 transition-all shadow-sm";
+                        btn.className = "px-5 py-1.5 rounded-xl border-2 border-brand-accent text-brand-accent font-bold text-xs bg-emerald-50/50 transition-all shadow-sm";
                     } else {
                         btn.className = "px-5 py-1.5 rounded-xl border-2 border-transparent text-slate-500 font-bold text-xs hover:text-slate-800 transition-all";
                     }
@@ -1441,7 +1444,7 @@
                 const btn = document.getElementById(`btn-time-${t}`);
                 if (btn) {
                     if (t === tf) {
-                        btn.className = "flex-1 py-1.5 rounded-xl bg-blue-600 text-white font-bold text-xs transition-all shadow-sm text-center";
+                        btn.className = "flex-1 py-1.5 rounded-xl bg-brand-accent text-white font-bold text-xs transition-all shadow-sm text-center";
                     } else {
                         btn.className = "flex-1 py-1.5 rounded-xl text-slate-500 font-bold text-xs transition-all text-center";
                     }
@@ -1477,7 +1480,7 @@
             if (dotsGroup) {
                 dotsGroup.innerHTML = data.dots.map((pt, idx) => {
                     const isLast = idx === data.dots.length - 1;
-                    return `<circle cx="${pt[0]}" cy="${pt[1]}" r="${isLast ? 5 : 4.5}" fill="${isLast ? '#0284c7' : '#2563eb'}" stroke="#ffffff" stroke-width="${isLast ? 2.5 : 2}" class="cursor-pointer hover:r-7 transition-all" />`;
+                    return `<circle cx="${pt[0]}" cy="${pt[1]}" r="${isLast ? 5 : 4.5}" fill="${isLast ? '#143e34' : '#205c4b'}" stroke="#ffffff" stroke-width="${isLast ? 2.5 : 2}" class="cursor-pointer hover:r-7 transition-all" />`;
                 }).join('');
             }
         }
